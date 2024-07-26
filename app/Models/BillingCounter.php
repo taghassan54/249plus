@@ -19,6 +19,12 @@ class BillingCounter extends Model
         static::addGlobalScope(new StoreScope);
     }
 
+    public function scopeActiveUserStore($query){
+        $store_id = request()->logged_user_store_id;
+        return $query->where('billing_counters.store_id', '=', $store_id);
+    }
+
+
     public function scopeActive($query){
         return $query->where('billing_counters.status', 1);
     }
