@@ -355,6 +355,88 @@ class User extends Controller
         }
     }
 
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        try {
+
+            // if(!check_access(['A_ADD_USER'], true)){
+            //     throw new Exception("Invalid request", 400);
+            // }
+
+            $this->validate_request($request);
+            
+            //check user email already exists
+            $user_email_exists = UserModel::where('email', $request->email)->first();
+            if ($user_email_exists) {
+                throw new Exception("Email is already added, try signing in");
+            }
+
+            $role_data = RoleModel::select('id')->where('slack', '=', $request->role)->resolveSuperAdminRole()->active()->first();
+            if (!$role_data) {
+                throw new Exception("Invalid role selected", 400);
+            }
+
+            $password = Str::random(6);
+            $hashed_password = Hash::make($password);
+
+            DB::beginTransaction();
+
+            $user = [
+                "slack" => $this->generate_slack("users"),
+                "user_code" => Str::random(6),
+                "email" => $request->email,
+                "password" => $hashed_password,
+                "init_password" => $password,
+                "fullname" => $request->fullname,
+                "phone" => $request->phone,
+                "role_id" => $role_data->id,
+                "status" => $request->status,
+                "created_by" =>null//=> $request->logged_user_id
+            ];
+            
+            $user_id = UserModel::create($user)->id;
+
+            $code_start_config = Config::get('constants.unique_code_start.user');
+            $code_start = (isset($code_start_config))?$code_start_config:100;
+            
+            $user_code = [
+                "user_code" => ($code_start+$user_id)
+            ];
+            UserModel::where('id', $user_id)
+            ->update($user_code);
+
+            $role_api = new RoleAPI();
+            $role_api->update_user_roles($request, $role_data->id);
+
+            $this->update_user_stores($request, $user['slack']);
+
+            DB::commit();
+
+            return response()->json($this->generate_response(
+                array(
+                    "message" => "User created successfully", 
+                    "data"    => $user['slack']
+                ), 'SUCCESS'
+            ));
+
+        }catch(Exception $e){
+            return response()->json($this->generate_response(
+                array(
+                    "message" => $e->getMessage(),
+                    "status_code" => $e->getCode()
+                )
+            ));
+        }
+    }
+
+
     /**
      * Display the specified resource.
      *

@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::post('/user/authenticate', 'API\User@authenticate');
 Route::post('/user/forgot_password', 'API\User@forgot_password');
 Route::post('/user/reset_password', 'API\User@reset_password');
+Route::post('/user/register', 'API\User@register');
 
 //customer order
 Route::post('/add_customer_order', 'API\Order@store_customer_order');
