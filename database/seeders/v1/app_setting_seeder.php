@@ -16,7 +16,7 @@ class app_setting_seeder extends Seeder
     {
         SettingAppModel::firstOrCreate(
             [
-                'company_name' => 'Appsthing POS',
+                'company_name' => '249Plus POS',
                 'app_date_time_format' => 'd-m-Y H:i',
                 'app_date_format' => 'd-m-Y',
                 'company_logo' => '',

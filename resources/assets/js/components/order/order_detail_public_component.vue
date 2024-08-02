@@ -66,7 +66,7 @@
                                     <div class="ml-3 align-self-center customer">
                                         <span class="d-block text-left"> {{ (order_basic.customer == null)?'-':order_basic.customer.name }} </span>
                                         <div class="d-block"> 
-                                            <span class="d-block text-left" v-if="order_basic.customer_email != 'walkincustomer@appsthing.com'">Email : {{ (order_basic.customer_email == null)?'-':order_basic.customer_email }} </span>
+                                            <span class="d-block text-left" v-if="order_basic.customer_email != 'walkincustomer@249Plus.com'">Email : {{ (order_basic.customer_email == null)?'-':order_basic.customer_email }} </span>
                                             <span class="d-block text-left" v-if="order_basic.customer_phone != '0000000000'">Contact : {{ (order_basic.customer_phone == null)?'-':order_basic.customer_phone }} </span>
                                         </div>
                                     </div>

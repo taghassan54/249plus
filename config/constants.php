@@ -10,7 +10,7 @@ return [
             'upload_path' => 'storage/profile/'
         ],
         'company' => [
-            'app_title' => 'Appsthing POS',
+            'app_title' => '249Plus POS',
             'company_logo_default' => '/images/logo_word_mark.svg',
             'invoice_logo_default' => '/images/logo_invoice_print.png',
             'navbar_logo_default' => '/images/logo_small.svg',

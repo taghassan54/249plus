@@ -23,7 +23,7 @@ class v4_8_overall_seeder extends Seeder
         SettingAppModel::where([
             ['app_title', '=', NULL],
         ])
-        ->update(['app_title' => 'Appsthing POS']);
+        ->update(['app_title' => '249Plus POS']);
 
         $restaurant_mm = MenuModel::select('id')->where([
             ['type', '=', 'MAIN_MENU'],

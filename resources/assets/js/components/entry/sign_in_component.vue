@@ -2,7 +2,7 @@
     <div class="container pt-3 entry_form">
         <div class="d-flex justify-content-center pt-5">
             <div class="col-sm-12 col-md-6 col-lg-4 col-lg-4">
-                <img :src="company_logo" class="d-block mb-4 entry_logo ml-auto mr-auto" alt="appsthing">
+                <img :src="company_logo" class="d-block mb-4 entry_logo ml-auto mr-auto" alt="249Plus">
                 <span class="text-display-0 d-block mb-3 text-center">Sign in</span>
                 <p v-html="server_errors" v-bind:class="[error_class]"></p>
                 {{ message }}
@@ -36,7 +36,7 @@
                 server_errors   : '',
                 error_class     : '',
                 processing      : false,
-                email           : (this.is_demo == true && this.preview_mode == true)?'admin@appsthing.com':'',
+                email           : (this.is_demo == true && this.preview_mode == true)?'admin@249Plus.com':'',
                 password        : (this.is_demo == true && this.preview_mode == true)?'administrator':'',
                 message         : this.prop_message
             }

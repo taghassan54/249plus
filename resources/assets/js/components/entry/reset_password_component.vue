@@ -2,7 +2,7 @@
     <div class="container pt-3 entry_form">
         <div class="d-flex justify-content-center pt-5">
             <div class="col-sm-12 col-md-6 col-lg-4 col-lg-4">
-                <img :src="company_logo" class="d-block mb-4 entry_logo ml-auto mr-auto" alt="appsthing">
+                <img :src="company_logo" class="d-block mb-4 entry_logo ml-auto mr-auto" alt="249Plus">
                 <span class="text-display-0 d-block mb-3 text-center">Reset Password</span>
                 <p v-html="server_errors" v-bind:class="[error_class]"></p>
                 <form @submit.prevent="submit_form" class="mb-3" v-if="password_reset_response == false">

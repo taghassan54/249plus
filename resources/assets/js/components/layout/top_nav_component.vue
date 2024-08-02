@@ -5,7 +5,7 @@
             <div class="container-fluid p-0">
                 
                 <a class="navbar-brand" href="/">
-                    <img :src="navbar_logo" class="d-inline-block align-top top-nav-logo  ml-lg-1 ml-sm-4" alt="appsthing"/>
+                    <img :src="navbar_logo" class="d-inline-block align-top top-nav-logo  ml-lg-1 ml-sm-4" alt="249Plus"/>
                 </a>
 
                 <div id="menu-toggle" class="menu-toggler mr-auto" v-if="hide_toggler === false">

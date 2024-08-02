@@ -21,12 +21,12 @@ class users_table_seeder extends Seeder
         $base_controller = new Controller;
 
         UserModel::updateOrCreate(
-            ['email' => 'admin@appsthing.com'],
+            ['email' => 'admin@249Plus.com'],
             [
                 'slack' => $base_controller->generate_slack("users"),
                 'user_code' => 'SA',
-                'fullname' => "Appsthing Admin",
-                'email' => 'admin@appsthing.com',
+                'fullname' => "249Plus Admin",
+                'email' => 'admin@249Plus.com',
                 'password' => $hashed_password,
                 'phone' => '0000000000',
                 'role_id' => 1, 

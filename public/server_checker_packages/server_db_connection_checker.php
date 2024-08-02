@@ -1,16 +1,16 @@
 <?php 
 
     /**
-    * @author Appsthing
+    * @author 249Plus
     * @version 2
     */
 
-    /* Author: Appsthing
-    Product Name: Appsthing POS 
+    /* Author: 249Plus
+    Product Name: 249Plus POS 
     Product Version: 6.0
-    Purchase: https://codecanyon.net/item/appsthing-pos-multiple-store-point-of-sale-billing-and-inventory-management-application/25742626
-    Website: https://www.appsthing.com
-    Contact: appsthing@gmail.com
+    Purchase: https://codecanyon.net/item/249Plus-pos-multiple-store-point-of-sale-billing-and-inventory-management-application/25742626
+    Website: https://www.249Plus.com
+    Contact: 249Plus@gmail.com
     License: For each use you must have a valid license purchased only from above link in order to legally use the application. */
     
     error_reporting(0);

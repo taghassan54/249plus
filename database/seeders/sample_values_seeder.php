@@ -65,7 +65,7 @@ class sample_values_seeder extends Seeder
         $store_1 = DB::table("stores")->insertGetId([
             "slack" => $base_controller->generate_slack("stores"),
             "store_code" => strtoupper(trim("STORE1")),
-            "name" => "Appsthing Store 1",
+            "name" => "249Plus Store 1",
             "tax_number" => "100000000000",
             "address" => $faker->address,
             "country_id" => 230,
@@ -91,7 +91,7 @@ class sample_values_seeder extends Seeder
         $store_2 = DB::table("stores")->insertGetId([
             "slack" => $base_controller->generate_slack("stores"),
             "store_code" => strtoupper(trim("STORE2")),
-            "name" => "Appsthing Store 2",
+            "name" => "249Plus Store 2",
             "tax_number" => "100000000001",
             "address" => $faker->address,
             "country_id" => 98,
@@ -116,7 +116,7 @@ class sample_values_seeder extends Seeder
         $store_3 = DB::table("stores")->insertGetId([
             "slack" => $base_controller->generate_slack("stores"),
             "store_code" => strtoupper(trim("STORE3")),
-            "name" => "Appsthing Store 3",
+            "name" => "249Plus Store 3",
             "tax_number" => "100000000001",
             "address" => $faker->address,
             "country_id" => 230,
@@ -142,7 +142,7 @@ class sample_values_seeder extends Seeder
         $store_4 = DB::table("stores")->insertGetId([
             "slack" => $base_controller->generate_slack("stores"),
             "store_code" => strtoupper(trim("STORE4")),
-            "name" => "Appsthing Store 4",
+            "name" => "249Plus Store 4",
             "tax_number" => "100000000001",
             "address" => $faker->address,
             "country_id" => 230,
@@ -168,7 +168,7 @@ class sample_values_seeder extends Seeder
         $store_5 = DB::table("stores")->insertGetId([
             "slack" => $base_controller->generate_slack("stores"),
             "store_code" => strtoupper(trim("STORE5")),
-            "name" => "Appsthing Store 5",
+            "name" => "249Plus Store 5",
             "tax_number" => "100000000001",
             "address" => $faker->address,
             "country_id" => 230,
@@ -575,7 +575,7 @@ class sample_values_seeder extends Seeder
             "slack" => $base_controller->generate_slack("users"),
             "user_code" => "100",
             "fullname" => $faker->firstName ." ".$faker->lastName,
-            "email" => "manager@appsthing.com",
+            "email" => "manager@249Plus.com",
             "password" => $hashed_password,
             "phone" => $faker->e164PhoneNumber,
             "role_id" => $manager_role_id, 
@@ -589,7 +589,7 @@ class sample_values_seeder extends Seeder
             "slack" => $base_controller->generate_slack("users"),
             "user_code" => "101",
             "fullname" => $faker->firstName ." ".$faker->lastName,
-            "email" => "accounts@appsthing.com",
+            "email" => "accounts@249Plus.com",
             "password" => $hashed_password,
             "phone" => $faker->e164PhoneNumber,
             "role_id" => $accounts_manager_role_id, 
@@ -603,7 +603,7 @@ class sample_values_seeder extends Seeder
             "slack" => $base_controller->generate_slack("users"),
             "user_code" => "102",
             "fullname" => $faker->firstName ." ".$faker->lastName,
-            "email" => "cashier@appsthing.com",
+            "email" => "cashier@249Plus.com",
             "password" => $hashed_password,
             "phone" => $faker->e164PhoneNumber,
             "role_id" => $cashier_role_id, 
@@ -617,7 +617,7 @@ class sample_values_seeder extends Seeder
             "slack" => $base_controller->generate_slack("users"),
             "user_code" => "103",
             "fullname" => $faker->firstName ." ".$faker->lastName,
-            "email" => "waiter1@appsthing.com",
+            "email" => "waiter1@249Plus.com",
             "password" => $hashed_password,
             "phone" => $faker->e164PhoneNumber,
             "role_id" => $waiter_role_id, 
@@ -631,7 +631,7 @@ class sample_values_seeder extends Seeder
             "slack" => $base_controller->generate_slack("users"),
             "user_code" => "104",
             "fullname" => $faker->firstName ." ".$faker->lastName,
-            "email" => "waiter2@appsthing.com",
+            "email" => "waiter2@249Plus.com",
             "password" => $hashed_password,
             "phone" => $faker->e164PhoneNumber,
             "role_id" => $waiter_role_id, 
@@ -645,7 +645,7 @@ class sample_values_seeder extends Seeder
             "slack" => $base_controller->generate_slack("users"),
             "user_code" => "105",
             "fullname" => $faker->firstName ." ".$faker->lastName,
-            "email" => "waiter3@appsthing.com",
+            "email" => "waiter3@249Plus.com",
             "password" => $hashed_password,
             "phone" => $faker->e164PhoneNumber,
             "role_id" => $waiter_role_id, 
@@ -659,7 +659,7 @@ class sample_values_seeder extends Seeder
             "slack" => $base_controller->generate_slack("users"),
             "user_code" => "106",
             "fullname" => $faker->firstName ." ".$faker->lastName,
-            "email" => "chef@appsthing.com",
+            "email" => "chef@249Plus.com",
             "password" => $hashed_password,
             "phone" => $faker->e164PhoneNumber,
             "role_id" => $chef_role_id, 
@@ -2142,7 +2142,7 @@ class sample_values_seeder extends Seeder
                     $random_products = ProductModel::withoutGlobalScopes()->select('slack', 'product_code', 'quantity')->inRandomOrder()->where('store_id', $active_store->id)->limit($random_limit)->get();
                     $payment_method = PaymentMethodModel::withoutGlobalScopes()->inRandomOrder()->whereNull('payment_constant')->first();
                     $account = AccountModel::withoutGlobalScopes()->inRandomOrder()->where('store_id', $active_store->id)->first();
-                    $waiter_user = UserModel::select('slack')->where('email', 'waiter1@appsthing.com')->first();
+                    $waiter_user = UserModel::select('slack')->where('email', 'waiter1@249Plus.com')->first();
 
                     if(!empty($random_products)){
                         foreach($random_products as $random_product){

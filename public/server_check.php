@@ -1,7 +1,7 @@
 <?php 
 
     /**
-    * @author Appsthing
+    * @author 249Plus
     * @version 4
     */
 
@@ -95,12 +95,12 @@
 
 <!DOCTYPE html>
 <!--
-Author: Appsthing
-Product Name: Appsthing POS 
+Author: 249Plus
+Product Name: 249Plus POS 
 Product Version: 6.0
-Purchase: https://codecanyon.net/item/appsthing-pos-multiple-store-point-of-sale-billing-and-inventory-management-application/25742626
-Website: https://www.appsthing.com
-Contact: appsthing@gmail.com
+Purchase: https://codecanyon.net/item/249Plus-pos-multiple-store-point-of-sale-billing-and-inventory-management-application/25742626
+Website: https://www.249Plus.com
+Contact: 249Plus@gmail.com
 License: For each use you must have a valid license purchased only from above link in order to legally use the application.
 -->
 <html lang="en">
@@ -108,7 +108,7 @@ License: For each use you must have a valid license purchased only from above li
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Appsthing Server Requirement Checker</title>
+        <title>249Plus Server Requirement Checker</title>
 
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_32_32.png">
         <link rel="apple-touch-icon" href="images/logo_apple_touch_icon.png"/>  
@@ -126,7 +126,7 @@ License: For each use you must have a valid license purchased only from above li
                     <span class="text-headline">Server Requirements Checker & Installation Helper</span>
                 </div>
                 <div class="d-flex justify-content-center mb-4">
-                    <span class="">This script will check if your server meets the requirements for running Appsthing POS application</span>
+                    <span class="">This script will check if your server meets the requirements for running 249Plus POS application</span>
                 </div>
 
                 <hr>
@@ -409,7 +409,7 @@ License: For each use you must have a valid license purchased only from above li
                     <small class="text-muted">Laravel Version <?php echo $laravel_version; ?></small>
                 </div>
                 <div class="d-flex justify-content-center mb-5 pb-2">
-                    Powered by&nbsp;<a href="https://www.appsthing.com">appsthing.com</a>
+                    Powered by&nbsp;<a href="https://www.249plus.com">249plus.com</a>
                 </div>
 
             </div>

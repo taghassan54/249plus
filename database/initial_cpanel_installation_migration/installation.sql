@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `appsthing_pos`
+-- Database: `249Plus_pos`
 --
 
 -- --------------------------------------------------------
@@ -482,7 +482,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `slack`, `customer_type`, `name`, `email`, `phone`, `address`, `dob`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'XDb4Cv5uJIh4nCWAY78dzskbP', 'DEFAULT', 'Walkin Customer', 'walkincustomer@appsthing.com', '0000000000', NULL, NULL, 1, NULL, NULL, '2023-03-28 13:52:30', '2023-03-28 13:52:30');
+(1, 'XDb4Cv5uJIh4nCWAY78dzskbP', 'DEFAULT', 'Walkin Customer', 'walkincustomer@249Plus.com', '0000000000', NULL, NULL, 1, NULL, NULL, '2023-03-28 13:52:30', '2023-03-28 13:52:30');
 
 -- --------------------------------------------------------
 
@@ -1962,7 +1962,7 @@ CREATE TABLE `setting_app` (
 --
 
 INSERT INTO `setting_app` (`company_name`, `app_title`, `timezone`, `app_date_time_format`, `app_date_format`, `invoice_print_logo`, `company_logo`, `navbar_logo`, `favicon`, `updated_by`, `created_at`, `updated_at`) VALUES
-('Appsthing', 'Appsthing POS', 'UTC', 'd-m-Y H:i', 'd-m-Y', '', NULL, NULL, NULL, 1, '2023-03-28 13:52:30', '2023-03-28 13:52:30');
+('249Plus', '249Plus POS', 'UTC', 'd-m-Y H:i', 'd-m-Y', '', NULL, NULL, NULL, 1, '2023-03-28 13:52:30', '2023-03-28 13:52:30');
 
 -- --------------------------------------------------------
 
@@ -2370,8 +2370,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `slack`, `user_code`, `fullname`, `email`, `password`, `init_password`, `password_reset_token`, `password_reset_max_tries`, `password_reset_last_tried_on`, `phone`, `profile_image`, `role_id`, `store_id`, `language_id`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'wQvVwH6i8u6uKHOzoT4Cn8lVl', 'SA', 'Appsthing Admin', 'admin@appsthing.com', '$2y$10$4zBOdZnTAslGDM8RHmqGo.WK.oAnoFkfS0yetMLAs8pG9ZFBM1anq', NULL, NULL, 0, NULL, '0000000000', NULL, 1, NULL, NULL, 1, NULL, NULL, '2023-03-28 13:52:29', '2023-03-28 13:52:29'),
-(2, 'KJ2bXpfkr23j57Yjpy5vLqxIq', 'CUSTOMER_USER', 'Customer', 'customer@appsthing.com', '', NULL, NULL, 0, NULL, '0000000000', NULL, 1, NULL, NULL, 1, NULL, NULL, '2023-03-28 13:52:30', '2023-03-28 13:52:30');
+(1, 'wQvVwH6i8u6uKHOzoT4Cn8lVl', 'SA', '249Plus Admin', 'admin@249Plus.com', '$2y$10$4zBOdZnTAslGDM8RHmqGo.WK.oAnoFkfS0yetMLAs8pG9ZFBM1anq', NULL, NULL, 0, NULL, '0000000000', NULL, 1, NULL, NULL, 1, NULL, NULL, '2023-03-28 13:52:29', '2023-03-28 13:52:29'),
+(2, 'KJ2bXpfkr23j57Yjpy5vLqxIq', 'CUSTOMER_USER', 'Customer', 'customer@249Plus.com', '', NULL, NULL, 0, NULL, '0000000000', NULL, 1, NULL, NULL, 1, NULL, NULL, '2023-03-28 13:52:30', '2023-03-28 13:52:30');
 
 -- --------------------------------------------------------
 

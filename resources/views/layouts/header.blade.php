@@ -41,5 +41,5 @@
     <link rel="stylesheet" href="{{ asset('css/labels.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     @stack('styles')
-    <title>{{ (config('app.app_title'))?config('app.app_title'):'Appsthing POS' }}</title>
+    <title>{{ (config('app.app_title'))?config('app.app_title'):'249Plus POS' }}</title>
 </head>

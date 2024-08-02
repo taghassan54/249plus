@@ -27,7 +27,7 @@
         },
         mounted() {
             console.info('Designed and Developed by 🅰🅿🅿🆂🆃🅷🅸🅽🅶');
-            console.info('https://codecanyon.net/item/appsthing-pos-multiple-store-point-of-sale-billing-and-inventory-management-application/25742626');
+            console.info('https://codecanyon.net/item/249Plus-pos-multiple-store-point-of-sale-billing-and-inventory-management-application/25742626');
             this.listen_events();
         },
         methods: {

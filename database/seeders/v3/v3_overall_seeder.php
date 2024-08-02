@@ -229,9 +229,9 @@ class v3_overall_seeder extends Seeder
         ->update(['icon' => 'fas fa-cog']);
 
         SettingAppModel::where([
-            ['company_name', '=', 'Appsthing POS']
+            ['company_name', '=', '249Plus POS']
         ])
-        ->update(['company_name' => 'Appsthing']);
+        ->update(['company_name' => '249Plus']);
 
         MasterTaxOptionModel::firstOrCreate(
             [

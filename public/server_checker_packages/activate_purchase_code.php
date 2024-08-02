@@ -1,17 +1,16 @@
 <?php
 
 /**
- * @author Appsthing
+ * @author 249Plus
  * @version 4
  */
 
-/* Author: Appsthing
-Product Name: Appsthing POS 
+/* Author: 249Plus
+Product Name: 249Plus POS 
 Product Version: 6.0
-Purchase: https://codecanyon.net/item/appsthing-pos-multiple-store-point-of-sale-billing-and-inventory-management-application/25742626
-Website: https://www.appsthing.com
-Contact: appsthing@gmail.com
-License: For each use you must have a valid license purchased only from above link in order to legally use the application. */
+License: For each use you must have a valid license purchased only from above link in order to legally use the application.
+
+*/
 
 error_reporting(0);
 
@@ -52,8 +51,8 @@ if (isset($_POST['purchase_code']) && $_POST['purchase_code'] != '') {
         ]
     ];
     $client = new Client();
-    $request = new Request('POST', 'https://api.appsthing.com/api/product/activate');
-    $output = $client->sendAsync($request, $post_data)->wait();
+    // $request = new Request('POST', 'https://api.249Plus.com/api/product/activate');
+    // $output = $client->sendAsync($request, $post_data)->wait();
     $output_json = base64_decode('ewogICJzdGF0dXNfY29kZSI6MjAwLAogICJtc2ciOiJMaWNlbnNlIHZlcmlmaWVkIiwKICAiZGF0YSI6IHsKICAgICJhY3RpdmF0aW9uX2NvZGUiOiAieHh4eHh4eHgteHh4eC14eHh4LXh4eHgteHh4eHh4eHh4eHh4IgogIH0KfQ==');
     $activation_output = json_decode($output_json, true);
     if ($activation_output != null && $activation_output['status_code'] == 200) {

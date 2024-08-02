@@ -24,7 +24,7 @@ class v2_overall_seeder extends Seeder
             ['id', '=', 1],
             ['customer_type', '=', 'DEFAULT'],
         ])
-        ->update(['name' => 'Walkin Customer', 'email' => 'walkincustomer@appsthing.com']);
+        ->update(['name' => 'Walkin Customer', 'email' => 'walkincustomer@249Plus.com']);
 
         //order payment status
         MasterStatus::firstOrCreate(

@@ -115,7 +115,7 @@ class PaymentGateway extends Controller
                     'country' => ($order_data['store'])?($order_data['store']['country']?strtolower($order_data['store']['country']['code']):'us'):'us',
                 ],
             ],
-            'description' => 'Appsthing POS Sale ['.$order_data['total_order_amount'].']',
+            'description' => '249Plus POS Sale ['.$order_data['total_order_amount'].']',
         ]);
         
         $output = [

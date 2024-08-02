@@ -22,12 +22,12 @@ class v4_9_overall_seeder extends Seeder
         $base_controller = new Controller;
         
         UserModel::updateOrCreate(
-            ['email' => 'customer@appsthing.com'],
+            ['email' => 'customer@249Plus.com'],
             [
                 'slack' => $base_controller->generate_slack("users"),
                 'user_code' => 'CUSTOMER_USER',
                 'fullname' => "Customer",
-                'email' => 'customer@appsthing.com',
+                'email' => 'customer@249Plus.com',
                 'password' => '',
                 'phone' => '0000000000',
                 'role_id' => 1, 
