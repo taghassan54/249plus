@@ -19,9 +19,9 @@ class ProductCollection extends ResourceCollection
             'data' => ProductResource::collection($this->collection),
             'links' => [
                 'has_more_items' => $this->hasMorePages(),
-//                'current_page' => $this->currentPage(),
+                'current_page' => $this->currentPage(),
                 'next_page' => $this->nextPageUrl(),
-//                'total_records' => $this->total()
+                'total_records' => $this->total()
             ]
         ];
     }

@@ -394,7 +394,7 @@ class Product extends Controller
             }
 
             $list = new ProductCollection(ProductModel::select('*')
-            ->orderBy('created_at', 'desc')->cursorPaginate(ProductModel::count()));
+            ->orderBy('created_at', 'desc')->paginate());
 
             return response()->json($this->generate_response(
                 array(
