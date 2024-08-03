@@ -21,7 +21,7 @@ class ProductCollection extends ResourceCollection
                 'has_more_items' => $this->hasMorePages(),
 //                'current_page' => $this->currentPage(),
                 'next_page' => $this->nextPageUrl(),
-                'total_records' => $this->total()
+//                'total_records' => $this->total()
             ]
         ];
     }
