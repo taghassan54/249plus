@@ -63,12 +63,12 @@ class SimpleProductResource extends JsonResource
             'purchase_amount_excluding_tax' => $this->purchase_amount_excluding_tax,
             'sale_amount_excluding_tax' => $this->sale_amount_excluding_tax,
             'sale_amount_including_tax' => $this->sale_amount_including_tax,
-             'category' => new CategoryResource($this->category),
-             'supplier' => new SupplierResource($this->supplier),
+//             'category' => new CategoryResource($this->category),
+//             'supplier' => new SupplierResource($this->supplier),
              'tax_code' => new TaxcodeResource($this->tax_code),
              'discount_code' => new DiscountcodeResource($this->discount_code),
-            'images' => ProductImageResource::collection($this->whenLoaded('product_images')),
-             'images' => ProductImageResource::collection($this->product_images),
+//            'images' => ProductImageResource::collection($this->whenLoaded('product_images')),
+//             'images' => ProductImageResource::collection($this->product_images),
             'is_ingredient' => $this->is_ingredient,
             'is_ingredient_price' => $this->is_ingredient_price,
              'ingredients' => $ingredients,
@@ -84,8 +84,8 @@ class SimpleProductResource extends JsonResource
             'detail_link' => (check_access(['A_DETAIL_PRODUCT'], true))?route('product', ['slack' => $this->slack]):'',
             'created_at_label' => $this->parseDate($this->created_at),
             'updated_at_label' => $this->parseDate($this->updated_at),
-             'created_by' => new UserResource($this->createdUser),
-             'updated_by' => new UserResource($this->updatedUser)
+//             'created_by' => new UserResource($this->createdUser),
+//             'updated_by' => new UserResource($this->updatedUser)
         ];
     }
 }
