@@ -667,7 +667,7 @@ class Order extends Controller
         $data['edit_order_access'] = check_access(['A_EDIT_ORDER'] ,true);
 
         $data['printnode_enabled'] = (isset($order_data['store']['printnode_enabled']) && $order_data['store']['printnode_enabled'] == 1)?true:false;
-dd($data);
+//dd($data);
         return view('order.order_summary', $data);
     }
 
