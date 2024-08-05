@@ -40,6 +40,7 @@ class ProductIngredientResource extends JsonResource
             ];
 
             // $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
+            $low_stock = ($ingredient->quantity<=$ingredient->alert_quantity)?1:0;
         }
 
         return [
