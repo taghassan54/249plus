@@ -432,6 +432,18 @@ $products = ProductModel::with([
     'storeData.createdUser',
     'storeData.updatedUser',
     'storeData.status_data',
+    'storeData.tax_code',
+    'storeData.discount_code',
+    'storeData.invoice_print_type',
+    'storeData.waiter_role_data',
+    'storeData.chef_role_data',
+    'storeData.restaurant_billing_type',
+    'storeData.country',
+    'storeData.menu_language',
+    'storeData.invoice_printer',
+    'storeData.kot_printer',
+    'storeData.other_printer',
+
 
     'ingredients',
     'ingredients.measurement_unit',
@@ -447,6 +459,7 @@ $products = ProductModel::with([
     'variants.createdUser',
     'variants.updatedUser',
     'variants.variant_option',
+    'variants.product_variant',
 
     'variants.product_variant',
     'variants.product_variant.updatedUser',
