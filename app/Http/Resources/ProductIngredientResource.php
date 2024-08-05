@@ -38,7 +38,7 @@ class ProductIngredientResource extends JsonResource
                 'created_at_label' =>$this->ingredient_product->parseDate($this->created_at),
                 'updated_at_label' =>$this->ingredient_product->parseDate($this->updated_at),
             ]);
-
+dd($ingredient);
             // $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
             $low_stock = ($ingredient->quantity<=$ingredient->alert_quantity)?1:0;
         }
