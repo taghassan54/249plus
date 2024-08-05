@@ -401,41 +401,57 @@ $products = ProductModel::with([
     'createdUser',
     'updatedUser',
     'status_data',
+
     'supplier',
     'supplier.status_data',
     'supplier.createdUser',
     'supplier.updatedUser',
+
     'category',
     'category.status_data',
     'category.createdUser',
     'category.updatedUser',
+
     'tax_code',
     'tax_code.status_data',
     'tax_code.createdUser',
     'tax_code.updatedUser',
+    'tax_code.tax_components',
+
     'discount_code',
     'discount_code.createdUser',
     'discount_code.updatedUser',
     'discount_code.status_data',
+
     'product_images',
     'product_images.createdUser',
     'product_images.updatedUser',
     'product_images.status_data',
+
     'storeData',
     'storeData.createdUser',
     'storeData.updatedUser',
     'storeData.status_data',
+
     'ingredients',
-    'ingredients.ingredient_product',
     'ingredients.measurement_unit',
     'ingredients.createdUser',
     'ingredients.updatedUser',
 
+    'ingredients.ingredient_product',
+    'ingredients.ingredient_product.createdUser',
+    'ingredients.ingredient_product.updatedUser',
+    'ingredients.ingredient_product.status_data',
+
     'variants',
     'variants.createdUser',
     'variants.updatedUser',
-    'variants.product_variant',
     'variants.variant_option',
+
+    'variants.product_variant',
+    'variants.product_variant.updatedUser',
+    'variants.product_variant.createdUser',
+    'variants.product_variant.status_data',
 
     'addon_groups',
     'addon_groups.addon_group',
