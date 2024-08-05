@@ -71,7 +71,7 @@ class SimpleProductResource extends JsonResource
             'is_ingredient' => $this->is_ingredient,
             'is_ingredient_price' => $this->is_ingredient_price,
             // 'ingredients' => $ingredients,
-            'ingredient_low_stock' => $low_ingredient_stock,
+            // 'ingredient_low_stock' => $low_ingredient_stock,
             'is_addon_product' =>  $this->is_addon_product,
             // 'addon_groups' => $addon_groups,
             // 'variants' => isset($variants)?$variants:NULL,
