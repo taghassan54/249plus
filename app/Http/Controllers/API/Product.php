@@ -428,8 +428,11 @@ $products = ProductModel::with([
     'ingredients',
     
     'addon_groups',
-    'addon_groups.addon_products',
-    'addon_groups.status_data',
+    'addon_groups.addon_group',
+    'addon_groups.addon_group.status_data',
+    'addon_groups.addon_group.createdUser',
+    'addon_groups.addon_group.updatedUser',
+    'addon_groups.addon_group.addon_products',
     'addon_groups.createdUser',
     'addon_groups.updatedUser',
 ])->orderBy('created_at', 'desc')->paginate(ProductModel::count());
