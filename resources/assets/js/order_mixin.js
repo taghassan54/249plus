@@ -29,7 +29,7 @@ export var order_mixin = {
             var discount_percentage = (product.discount_code != null)?parseFloat(product.discount_code.discount_percentage):0;
             var quantity = (this.cart[product.slack] != null)?parseFloat(this.cart[product.slack].quantity)+1:1;
             var total_price = parseFloat(quantity)*parseFloat(product_sale_price);
-            var image = (product.images.length > 0 && product.images[0].thumbnail !='')?product.images[0]['thumbnail']:'/images/placeholder_images/menu_placeholder.png';
+            var image =  (product.images && product.images.length > 0 && product.images[0].thumbnail !='')?product.images[0]['thumbnail']:'/images/placeholder_images/menu_placeholder.png';
             
 
             var product_data = { 
