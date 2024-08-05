@@ -17,7 +17,29 @@ class ProductIngredientResource extends JsonResource
         $ingredient_product = collect();
         $low_stock = 0;
         if(!empty($this->ingredient_product)){
-            $ingredient_product = new ProductResource($this->ingredient_product);
+            // $ingredient_product = new ProductResource($this->ingredient_product);
+
+
+            //TODO Test This
+            $ingredient_product={
+                'slack' =>$this->ingredient_product->slack,
+                'product_code' =>$this->ingredient_product->product_code,
+                'name' =>$this->ingredient_product->name,
+                'description' =>$this->ingredient_product->description,
+                'quantity' =>$this->ingredient_product->quantity,
+                'alert_quantity' =>$this->ingredient_product->alert_quantity,
+                'purchase_amount_excluding_tax' =>$this->ingredient_product->purchase_amount_excluding_tax,
+                'sale_amount_excluding_tax' =>$this->ingredient_product->sale_amount_excluding_tax,
+                'sale_amount_including_tax' =>$this->ingredient_product->sale_amount_including_tax,
+                'images' => ProductImageResource::collection($this->product_images),
+                'is_ingredient' =>$this->ingredient_product->is_ingredient,
+                'is_ingredient_price' =>$this->ingredient_product->is_ingredient_price,
+                'is_addon_product' => $this->ingredient_product->is_addon_product,
+                'created_at_label' =>$this->ingredient_product->parseDate($this->created_at),
+                'updated_at_label' =>$this->ingredient_product->parseDate($this->updated_at),
+            
+            };
+
             $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
         }
 
