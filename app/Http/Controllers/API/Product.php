@@ -432,6 +432,10 @@ $products = ProductModel::with([
     'ingredients.updatedUser',
 
     'variants',
+    'variants.createdUser',
+    'variants.updatedUser',
+    'variants.product_variant',
+    'variants.variant_option',
 
     'addon_groups',
     'addon_groups.addon_group',
