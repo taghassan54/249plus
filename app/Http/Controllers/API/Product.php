@@ -397,7 +397,7 @@ class Product extends Controller
             // ->orderBy('created_at', 'desc')->paginate(ProductModel::count()));
 
 // Fetch products with related models using eager loading
-$products = Product::with([
+$products = ProductModel::with([
     'createdUser',
     'updatedUser',
     'status_data',
