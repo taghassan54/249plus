@@ -46,7 +46,7 @@ class ProductIngredientResource extends JsonResource
         return [
             'slack' => $this->slack,
             'ingredient_product' => $ingredient,
-            'quantity' => $ingredient->quantity,
+            // 'quantity' => $ingredient->quantity,
             // 'quantity' => $this->quantity,
             'low_stock' => $low_stock,
             'measurement_unit' => new MeasurementUnitResource($this->measurement_unit),
