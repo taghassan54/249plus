@@ -38,8 +38,7 @@ class ProductResource extends JsonResource
         if($block_recurring_data == false){
             $product_variants = $this->product_variants($this->id);
 
-            $variants = ProductVariantResource::collection($this->variants());
-//            $variants = ProductVariantResource::collection($product_variants['product_variants']);
+            $variants = ProductVariantResource::collection($product_variants['product_variants']);
 
             $variants_collection = collect($variants);
             $variants_by_options = $variants_collection->groupBy('variant_option.label');
@@ -77,6 +76,7 @@ class ProductResource extends JsonResource
             'is_addon_product' =>  $this->is_addon_product,
             'addon_groups' => $addon_groups,
             'variants' => isset($variants)?$variants:NULL,
+            'v2'=>$this->variants(),
             // 'variants_by_options' => isset($variants_by_options)?$variants_by_options:NULL,
             // 'variants_by_options_pos' => isset($variants_by_options_pos)?$variants_by_options_pos:NULL,
             'parent_variant_option' => isset($parent_variant_option)?$parent_variant_option:NULL,
