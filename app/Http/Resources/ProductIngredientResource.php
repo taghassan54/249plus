@@ -16,7 +16,6 @@ class ProductIngredientResource extends JsonResource
     {
         $ingredient_product = collect();
         $low_stock = 0;
-       
         if(!empty($this->ingredient_product)){
             // $ingredient_product = new ProductResource($this->ingredient_product);
 
@@ -40,14 +39,13 @@ class ProductIngredientResource extends JsonResource
                 'updated_at_label' =>$this->ingredient_product->parseDate($this->updated_at),
             ];
 
-            $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
+            // $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
         }
 
         return [
             'slack' => $this->slack,
             'ingredient_product' => $ingredient,
-            // 'quantity' => $ingredient->quantity,
-            // 'quantity' => $this->quantity,
+            'quantity' => $this->quantity,
             'low_stock' => $low_stock,
             'measurement_unit' => new MeasurementUnitResource($this->measurement_unit),
             'created_at_label' => $this->parseDate($this->created_at),
