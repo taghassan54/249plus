@@ -37,7 +37,6 @@ class ProductResource extends JsonResource
         $parent_variant_option = [];
         if($block_recurring_data == false){
             $product_variants = $this->product_variants($this->id);
-
             $variants = ProductVariantResource::collection($product_variants['product_variants']);
 
             $variants_collection = collect($variants);
@@ -46,12 +45,12 @@ class ProductResource extends JsonResource
             
             $parent_variant_option = $product_variants['parent_variant_option'];
 
-//            $product_variants_pos = $this->product_variants($this->id, false);
-//            $variants_pos = ProductVariantResource::collection($product_variants_pos['product_variants']);
+            $product_variants_pos = $this->product_variants($this->id, false);
+            $variants_pos = ProductVariantResource::collection($product_variants_pos['product_variants']);
 
-//            $variants_pos_collection = collect($variants_pos);
-//            $variants_by_options_pos = $variants_pos_collection->sortBy('product.name')->groupBy('variant_option.label');
-//            $variants_by_options_pos->toArray();
+            $variants_pos_collection = collect($variants_pos);
+            $variants_by_options_pos = $variants_pos_collection->sortBy('product.name')->groupBy('variant_option.label');
+            $variants_by_options_pos->toArray();
         }
 
         return [
@@ -77,7 +76,7 @@ class ProductResource extends JsonResource
             'addon_groups' => $addon_groups,
             'variants' => isset($variants)?$variants:NULL,
              'variants_by_options' => isset($variants_by_options)?$variants_by_options:NULL,
-            // 'variants_by_options_pos' => isset($variants_by_options_pos)?$variants_by_options_pos:NULL,
+             'variants_by_options_pos' => isset($variants_by_options_pos)?$variants_by_options_pos:NULL,
             'parent_variant_option' => isset($parent_variant_option)?$parent_variant_option:NULL,
             'customizable' => ($addon_groups->isEmpty())?0:1,
             'status' => new MasterStatusResource($this->status_data),
