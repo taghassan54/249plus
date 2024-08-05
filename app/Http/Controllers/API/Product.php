@@ -393,8 +393,26 @@ class Product extends Controller
                 throw new Exception("Invalid request", 400);
             }
 
-            $list = new ProductCollection(ProductModel::select('*')
-            ->orderBy('created_at', 'desc')->paginate(ProductModel::count()));
+            // $list = new ProductCollection(ProductModel::select('*')
+            // ->orderBy('created_at', 'desc')->paginate(ProductModel::count()));
+
+// Fetch products with related models using eager loading
+$products = Product::with([
+    'createdUser',
+    'updatedUser',
+    'status_data',
+    'supplier',
+    'category',
+    'tax_code',
+    'discount_code',
+    'product_images',
+    'storeData',
+    'ingredients',
+    'addon_groups'
+])->orderBy('created_at', 'desc')->paginate(Product::count());
+
+// Pass the products to the ProductCollection
+$list = new ProductCollection($products);
 
             return response()->json($this->generate_response(
                 array(
