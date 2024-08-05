@@ -409,7 +409,7 @@ $products = ProductModel::with([
     'storeData',
     'ingredients',
     'addon_groups'
-])->orderBy('created_at', 'desc')->paginate(Product::count());
+])->orderBy('created_at', 'desc')->paginate(ProductModel::count());
 
 // Pass the products to the ProductCollection
 $list = new ProductCollection($products);
