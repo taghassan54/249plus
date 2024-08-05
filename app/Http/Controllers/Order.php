@@ -397,6 +397,12 @@ class Order extends Controller
 
         $filename = 'order_'.$order_data['order_number'].'.pdf';
 
+        try {
+            // Convert the PDF to a PNG image
+        return  $filename;
+        }catch (Exception $exception){}
+
+
         Storage::disk('order')->delete(
             [
                 $filename
@@ -405,19 +411,6 @@ class Order extends Controller
 
         $cache_params = '?='.uniqid();
 
-        try {
-            // Convert the PDF to a PNG image
-            $imagick = new Imagick();
-            $imagick->readImage($filename.$cache_params);
-            $imagick->setImageFormat('png');
-            $imagePath = storage_path('app/public/order_'.$order_data['order_number'].'.png');
-            $imagick->writeImage($imagePath);
-
-            // Cleanup
-            $imagick->clear();
-            $imagick->destroy();
-return  $imagePath;
-        }catch (Exception $exception){}
 
         if($type == 'INLINE'){
             $mpdf->Output($filename.$cache_params, \Mpdf\Output\Destination::INLINE);
