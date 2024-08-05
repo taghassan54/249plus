@@ -37,6 +37,7 @@ class ProductResource extends JsonResource
         $parent_variant_option = [];
         if($block_recurring_data == false){
             $product_variants = $this->product_variants($this->id);
+            dd($product_variants);
             $variants = ProductVariantResource::collection($product_variants['product_variants']);
 
             $variants_collection = collect($variants);

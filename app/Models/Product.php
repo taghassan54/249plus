@@ -183,6 +183,22 @@ class Product extends Model
         return $this->hasMany('App\Models\ProductAddonGroup', 'product_id', 'id')->withoutGlobalScopes();
     }
 
+    public function variants()
+    {
+        return $this->hasMany(ProductVariantModel::class, 'product_id');
+    }
+
+    // علاقة مخصصة للحصول على المتغيرات ذات الصلة
+    public function relatedVariants($load_self = false)
+    {
+        return $this->hasMany(ProductVariantModel::class, 'variant_code', 'variant_code')
+            ->where(function ($query) use ($load_self) {
+                if (!$load_self) {
+                    $query->where('product_id', '!=', $this->id);
+                }
+            });
+    }
+
     public function product_variants($product_id, $load_self = false){
         $product_variants = [
             'parent_variant_option' => '',
