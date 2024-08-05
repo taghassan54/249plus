@@ -416,7 +416,10 @@ $products = ProductModel::with([
     'product_images.updatedUser',
     'storeData',
     'ingredients',
-    'addon_groups'
+    'addon_groups',
+    'addon_groups.addon_group_product',
+    'addon_groups.createdUser',
+    'addon_groups.updatedUser',
 ])->orderBy('created_at', 'desc')->paginate(ProductModel::count());
 
 // Pass the products to the ProductCollection
