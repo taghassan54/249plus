@@ -474,7 +474,7 @@ $products = ProductModel::with([
     'addon_groups.addon_group.addon_products',
     'addon_groups.createdUser',
     'addon_groups.updatedUser',
-])->orderBy('created_at', 'desc')->paginate(ProductModel::count());
+])->orderBy('created_at', 'desc')->get();
 
 // Pass the products to the ProductCollection
 $list = new ProductCollection($products);
