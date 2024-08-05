@@ -15,7 +15,7 @@ class ProductVariantResource extends JsonResource
    
     public function toArray($request)
     {
-        $product = (new ProductResource($this->product_variant))->block_recurring_variants(true);
+        $product = (new SimpleProductResource($this->product_variant))->block_recurring_variants(true);
        
     
         $variant_option = $this->variant_option;
