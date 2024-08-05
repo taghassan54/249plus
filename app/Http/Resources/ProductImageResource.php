@@ -22,8 +22,10 @@ class ProductImageResource extends JsonResource
             'thumbnail' =>(Storage::disk('product')->exists($this->filename))?config('constants.upload.product.view_path').'thumb_'.$this->filename:'',
             'created_at_label' => $this->parseDate($this->created_at),
             'updated_at_label' => $this->parseDate($this->updated_at),
-            'created_by' => new UserResource($this->createdUser),
-            'updated_by' => new UserResource($this->updatedUser)
+            // 'created_by' => new UserResource($this->createdUser),
+            // 'updated_by' => new UserResource($this->updatedUser)
+            'created_by' => null,
+            'updated_by' =>null
         ];
     }
 }
