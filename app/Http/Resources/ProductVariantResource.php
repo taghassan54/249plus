@@ -40,7 +40,7 @@ class ProductVariantResource extends JsonResource
         return [
             'slack' => $this->slack,
             'variant_code' => $this->variant_code,
-            'product' => $product,
+            // 'product' => $product,
             'variant_option' => $variant_option,
             'created_at_label' => $this->parseDate($this->created_at),
             'updated_at_label' => $this->parseDate($this->updated_at),
