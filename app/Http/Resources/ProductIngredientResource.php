@@ -17,7 +17,7 @@ class ProductIngredientResource extends JsonResource
         $ingredient_product = collect();
         $low_stock = 0;
         if(!empty($this->ingredient_product)){
-            $ingredient_product = new SimpleProductResource($this->ingredient_product);
+            $ingredient_product = new ProductResource($this->ingredient_product);
 
             $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
         }

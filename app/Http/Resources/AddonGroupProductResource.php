@@ -14,7 +14,7 @@ class AddonGroupProductResource extends JsonResource
      */
     public function toArray($request)
     {
-        $addon_group_product = new SimpleProductResource($this->addon_group_product);
+        $addon_group_product = new ProductResource($this->addon_group_product);
         $low_stock = ($addon_group_product->quantity<$addon_group_product->alert_quantity)?1:0;
 
         return [
