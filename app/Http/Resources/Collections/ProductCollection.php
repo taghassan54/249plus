@@ -18,10 +18,14 @@ class ProductCollection extends ResourceCollection
         return [
             'data' => ProductResource::collection($this->collection),
             'links' => [
-                'has_more_items' => $this->hasMorePages()??false,
-                'current_page' => $this->currentPage()??1,
-                'next_page' => $this->nextPageUrl()??'',
-                'total_records' => $this->total()??0
+                'has_more_items' => false,
+//                'has_more_items' => $this->hasMorePages()??false,
+                'current_page' => 1,
+//                'current_page' => $this->currentPage()??1,
+                'next_page' => '',
+//                'next_page' => $this->nextPageUrl()??'',
+                'total_records' => $this->collection->count()
+//                'total_records' => $this->total()??0
             ]
         ];
     }
