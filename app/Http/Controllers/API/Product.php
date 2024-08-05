@@ -403,9 +403,13 @@ $products = ProductModel::with([
     'status_data',
     'supplier',
     'category',
+    'category.createdUser',
+    'category.updatedUser',
     'tax_code',
     'discount_code',
     'product_images',
+    'product_images.createdUser',
+    'product_images.updatedUser',
     'storeData',
     'ingredients',
     'addon_groups'
