@@ -76,7 +76,7 @@ class ProductResource extends JsonResource
             'is_addon_product' =>  $this->is_addon_product,
             'addon_groups' => $addon_groups,
             'variants' => isset($variants)?$variants:NULL,
-            // 'variants_by_options' => isset($variants_by_options)?$variants_by_options:NULL,
+             'variants_by_options' => isset($variants_by_options)?$variants_by_options:NULL,
             // 'variants_by_options_pos' => isset($variants_by_options_pos)?$variants_by_options_pos:NULL,
             'parent_variant_option' => isset($parent_variant_option)?$parent_variant_option:NULL,
             'customizable' => ($addon_groups->isEmpty())?0:1,
