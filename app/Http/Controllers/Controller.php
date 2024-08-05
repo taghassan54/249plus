@@ -76,7 +76,6 @@ class Controller extends BaseController
 
     function generate_response($response_array, $type = "")
     {
-        return $response_array;
         switch($type){
             case "SUCCESS":
                 $status_code = 200;
