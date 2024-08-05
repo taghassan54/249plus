@@ -426,7 +426,13 @@ $products = ProductModel::with([
     'storeData.updatedUser',
     'storeData.status_data',
     'ingredients',
-    
+    'ingredients.ingredient_product',
+    'ingredients.measurement_unit',
+    'ingredients.createdUser',
+    'ingredients.updatedUser',
+
+    'ingredients.product_variants',
+
     'addon_groups',
     'addon_groups.addon_group',
     'addon_groups.addon_group.status_data',
