@@ -21,7 +21,7 @@ class ProductIngredientResource extends JsonResource
 
 
             //TODO Test This
-            $ingredient_product={
+            $ingredient_product=[
                 'slack' =>$this->ingredient_product->slack,
                 'product_code' =>$this->ingredient_product->product_code,
                 'name' =>$this->ingredient_product->name,
@@ -31,14 +31,13 @@ class ProductIngredientResource extends JsonResource
                 'purchase_amount_excluding_tax' =>$this->ingredient_product->purchase_amount_excluding_tax,
                 'sale_amount_excluding_tax' =>$this->ingredient_product->sale_amount_excluding_tax,
                 'sale_amount_including_tax' =>$this->ingredient_product->sale_amount_including_tax,
-                'images' => ProductImageResource::collection($this->product_images),
+                'images' => ProductImageResource::collection($this->ingredient_product->product_images),
                 'is_ingredient' =>$this->ingredient_product->is_ingredient,
                 'is_ingredient_price' =>$this->ingredient_product->is_ingredient_price,
                 'is_addon_product' => $this->ingredient_product->is_addon_product,
                 'created_at_label' =>$this->ingredient_product->parseDate($this->created_at),
                 'updated_at_label' =>$this->ingredient_product->parseDate($this->updated_at),
-            
-            };
+            ];
 
             $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
         }
