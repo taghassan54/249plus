@@ -69,7 +69,9 @@ class SimpleProductResource extends JsonResource
              'discount_code' => new DiscountcodeResource($this->discount_code),
 //            'images' => ProductImageResource::collection($this->whenLoaded('product_images')),
 //             'images' => ProductImageResource::collection($this->product_images),
-            'is_ingredient' => $this->is_ingredient,
+
+            'images' =>[],
+                'is_ingredient' => $this->is_ingredient,
             'is_ingredient_price' => $this->is_ingredient_price,
              'ingredients' => $ingredients,
              'ingredient_low_stock' => $low_ingredient_stock,
