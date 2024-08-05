@@ -18,14 +18,14 @@
  */
 
 /*!
- * Chart.js v4.2.1
+ * Chart.js v4.4.3
  * https://www.chartjs.org
- * (c) 2023 Chart.js Contributors
+ * (c) 2024 Chart.js Contributors
  * Released under the MIT License
  */
 
 /*!
- * Pusher JavaScript Library v8.0.2
+ * Pusher JavaScript Library v8.3.0
  * https://pusher.com/
  *
  * Copyright 2020, Pusher
@@ -33,34 +33,20 @@
  */
 
 /*!
- * Sizzle CSS Selector Engine v2.3.5
- * https://sizzlejs.com/
- *
- * Copyright JS Foundation and other contributors
- * Released under the MIT license
- * https://js.foundation/
- *
- * Date: 2020-03-14
- */
-
-/*!
- * Vue.js v2.7.14
- * (c) 2014-2022 Evan You
+ * Vue.js v2.7.16
+ * (c) 2014-2023 Evan You
  * Released under the MIT License.
  */
 
 /*!
- * jQuery JavaScript Library v3.5.1
+ * jQuery JavaScript Library v3.7.1
  * https://jquery.com/
  *
- * Includes Sizzle.js
- * https://sizzlejs.com/
- *
- * Copyright JS Foundation and other contributors
+ * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2020-05-04T22:49Z
+ * Date: 2023-08-28T13:37Z
  */
 
 /*!
@@ -71,25 +57,10 @@
  */
 
 /*!
-FullCalendar v5.3.2
+FullCalendar v5.11.5
 Docs & License: https://fullcalendar.io/
-(c) 2020 Adam Shaw
+(c) 2022 Adam Shaw
 */
-
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
 
 /**
   * vee-validate v2.2.15
@@ -116,8 +87,6 @@ PERFORMANCE OF THIS SOFTWARE.
 
 //! moment.js
 
-//! moment.js language configuration
-
 //! moment.js locale configuration
 
-//! version : 0.5.31
+//! version : 0.5.45
