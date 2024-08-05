@@ -16,7 +16,7 @@ class ProductIngredientResource extends JsonResource
     {
         $ingredient_product = collect();
         $low_stock = 0;
-        dd($this->ingredient_product);
+       
         if(!empty($this->ingredient_product)){
             // $ingredient_product = new ProductResource($this->ingredient_product);
 
@@ -46,7 +46,7 @@ class ProductIngredientResource extends JsonResource
         return [
             'slack' => $this->slack,
             'ingredient_product' => $ingredient,
-            'quantity' => $ingredient_product->quantity,
+            'quantity' => $ingredient->quantity,
             // 'quantity' => $this->quantity,
             'low_stock' => $low_stock,
             'measurement_unit' => new MeasurementUnitResource($this->measurement_unit),
