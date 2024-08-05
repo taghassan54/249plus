@@ -185,7 +185,7 @@ class Product extends Model
 
     public function variants()
     {
-        return $this->hasMany(ProductVariantModel::class, 'product_id');
+        return $this->hasMany(ProductVariantModel::class, 'product_id','id');
     }
 
     // علاقة مخصصة للحصول على المتغيرات ذات الصلة
