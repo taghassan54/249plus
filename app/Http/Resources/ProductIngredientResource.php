@@ -21,7 +21,7 @@ class ProductIngredientResource extends JsonResource
 
 
             //TODO Test This
-            $ingredient=[
+            $ingredient=collect([
                 'slack' =>$this->ingredient_product->slack,
                 'product_code' =>$this->ingredient_product->product_code,
                 'name' =>$this->ingredient_product->name,
@@ -37,7 +37,7 @@ class ProductIngredientResource extends JsonResource
                 'is_addon_product' => $this->ingredient_product->is_addon_product,
                 'created_at_label' =>$this->ingredient_product->parseDate($this->created_at),
                 'updated_at_label' =>$this->ingredient_product->parseDate($this->updated_at),
-            ];
+            ]);
 
             // $low_stock = ($ingredient_product->quantity<=$ingredient_product->alert_quantity)?1:0;
             $low_stock = ($ingredient->quantity<=$ingredient->alert_quantity)?1:0;

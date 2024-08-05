@@ -31,8 +31,8 @@ class ProductVariantResource extends JsonResource
             'is_ingredient' =>$this->product_variant->is_ingredient,
             'is_ingredient_price' =>$this->product_variant->is_ingredient_price,
             'is_addon_product' => $this->product_variant->is_addon_product,
-            'created_at_label' =>$this->product_variant->parseDate($this->created_at),
-            'updated_at_label' =>$this->product_variant->parseDate($this->updated_at),
+            'created_at_label' =>$this->product_variant->parseDate($this->product_variant->created_at),
+            'updated_at_label' =>$this->product_variant->parseDate($this->product_variant->updated_at),
         ];
        
         $variant_option = $this->variant_option;
