@@ -31,12 +31,15 @@ use App\Models\KeyboardShortcut as KeyboardShortcutModel;
 use App\Models\User as UserModel;
 
 use Mpdf\Mpdf;
+use Imagick;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Config;
 
+use PHPUnit\Exception;
 use Razorpay\Api\Api;
+
 
 class Order extends Controller
 {
@@ -399,8 +402,22 @@ class Order extends Controller
                 $filename
             ]
         );
-        
+
         $cache_params = '?='.uniqid();
+
+        try {
+            // Convert the PDF to a PNG image
+            $imagick = new Imagick();
+            $imagick->readImage($filename.$cache_params);
+            $imagick->setImageFormat('png');
+            $imagePath = storage_path('app/public/order_'.$order_data['order_number'].'.png');
+            $imagick->writeImage($imagePath);
+
+            // Cleanup
+            $imagick->clear();
+            $imagick->destroy();
+return  $imagePath;
+        }catch (Exception $exception){}
 
         if($type == 'INLINE'){
             $mpdf->Output($filename.$cache_params, \Mpdf\Output\Destination::INLINE);
@@ -667,7 +684,7 @@ class Order extends Controller
         $data['edit_order_access'] = check_access(['A_EDIT_ORDER'] ,true);
 
         $data['printnode_enabled'] = (isset($order_data['store']['printnode_enabled']) && $order_data['store']['printnode_enabled'] == 1)?true:false;
-dd($data);
+
         return view('order.order_summary', $data);
     }
 
