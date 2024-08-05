@@ -21,7 +21,7 @@ class ProductIngredientResource extends JsonResource
 
 
             //TODO Test This
-            $ingredient_product=[
+            $ingredient=[
                 'slack' =>$this->ingredient_product->slack,
                 'product_code' =>$this->ingredient_product->product_code,
                 'name' =>$this->ingredient_product->name,
@@ -44,7 +44,7 @@ class ProductIngredientResource extends JsonResource
 
         return [
             'slack' => $this->slack,
-            'ingredient_product' => $ingredient_product,
+            'ingredient_product' => $ingredient,
             'quantity' => $this->quantity,
             'low_stock' => $low_stock,
             'measurement_unit' => new MeasurementUnitResource($this->measurement_unit),
