@@ -405,15 +405,27 @@ class Order extends Controller
             $imagick = new Imagick();
             $imagick->readImage($pdfPath);
             $imagick->setImageFormat('png');
-            $imagePath = storage_path('order/'.'order_'.$order_data['order_number'].'.png');
+
+            // Ensure the target directory exists
+            $imageDirectory = storage_path('order');
+
+
+
+            if (!file_exists($imageDirectory)) {
+                mkdir($imageDirectory, 0775, true);
+            }
+
+            $imagePath = $imageDirectory.'order_'.$order_data['order_number'].'.png';
+
             $imagick->writeImage($imagePath);
 
             // Cleanup
             $imagick->clear();
             $imagick->destroy();
-dd($imagePath);
+            unlink($pdfPath);
+            dd($imagePath);
         }catch (Exception $exception){
-            dd($exception);
+
         }
 
 
