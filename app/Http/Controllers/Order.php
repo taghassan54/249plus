@@ -399,11 +399,11 @@ class Order extends Controller
 
         try {
             // Convert the PDF to a PNG image
-
-            $mpdf->Output($filename, \Mpdf\Output\Destination::FILE);
+            $pdfPath = storage_path('app/public/temp.pdf');
+            $mpdf->Output($pdfPath, \Mpdf\Output\Destination::FILE);
             // Convert the PDF to a PNG image
             $imagick = new Imagick();
-            $imagick->readImage(storage_path().'/order/'.$filename);
+            $imagick->readImage($pdfPath);
             $imagick->setImageFormat('png');
             $imagePath = storage_path('order/'.'order_'.$order_data['order_number'].'.png');
             $imagick->writeImage($imagePath);
