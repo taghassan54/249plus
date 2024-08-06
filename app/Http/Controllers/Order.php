@@ -412,7 +412,9 @@ class Order extends Controller
             $imagick->clear();
             $imagick->destroy();
 dd($imagePath);
-        }catch (Exception $exception){}
+        }catch (Exception $exception){
+            dd($exception);
+        }
 
 
         Storage::disk('order')->delete(
