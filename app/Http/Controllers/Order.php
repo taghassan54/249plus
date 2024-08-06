@@ -406,10 +406,13 @@ class Order extends Controller
             $imagick->readImage($pdfPath);
             $imagick->setImageFormat('png');
 
+            // Set background color to white
+            $imagick = $imagick->flattenImages(); // Flatten the image to remove transparency
+            $imagick->setImageBackgroundColor('#ffffff');
+            $imagick->setImageAlphaChannel(Imagick::ALPHACHANNEL_REMOVE);
+
             // Ensure the target directory exists
             $imageDirectory = storage_path('app/public/order');
-
-
 
             if (!file_exists($imageDirectory)) {
                 mkdir($imageDirectory, 0775, true);
