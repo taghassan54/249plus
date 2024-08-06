@@ -400,7 +400,7 @@ class Order extends Controller
         try {
             // Convert the PDF to a PNG image
 
-
+            $mpdf->Output($filename, \Mpdf\Output\Destination::INLINE);
             // Convert the PDF to a PNG image
             $imagick = new Imagick();
             $imagick->readImage(storage_path().'/order/'.$filename);
