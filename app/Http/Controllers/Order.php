@@ -415,7 +415,7 @@ class Order extends Controller
                 mkdir($imageDirectory, 0775, true);
             }
 
-            $imagePath = $imageDirectory.'order_'.$order_data['order_number'].'.png';
+            $imagePath = $imageDirectory.'/'.'order_'.$order_data['order_number'].'.png';
 
             $imagick->writeImage($imagePath);
 
