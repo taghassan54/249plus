@@ -399,7 +399,7 @@ class Order extends Controller
 
         try {
             // Convert the PDF to a PNG image
-        dd($filename);
+        dd(storage_path().'/order/'.$filename);
         }catch (Exception $exception){}
 
 
