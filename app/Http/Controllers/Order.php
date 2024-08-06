@@ -404,6 +404,7 @@ class Order extends Controller
             // Convert the PDF to a PNG image
             $imagick = new Imagick();
             $imagick->readImage($pdfPath);
+            $imagick->setResolution(300, 300);
             $imagick->setImageFormat('png');
 
             // Set background color to white
