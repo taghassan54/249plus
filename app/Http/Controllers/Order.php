@@ -407,7 +407,7 @@ class Order extends Controller
             $imagick->setImageFormat('png');
 
             // Ensure the target directory exists
-            $imageDirectory = storage_path('order');
+            $imageDirectory = storage_path('app/public/order');
 
 
 
