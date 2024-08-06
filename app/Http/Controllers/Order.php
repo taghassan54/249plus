@@ -427,7 +427,7 @@ class Order extends Controller
             $imagick->clear();
             $imagick->destroy();
             unlink($pdfPath);
-            dd($imagePath);
+            
         }catch (Exception $exception){
 
         }
