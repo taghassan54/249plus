@@ -40,15 +40,7 @@ return [
        
 
         $addon_groups =$this->addon_groups? $this->addon_groups->map(function($group){
-dd($group);
-            $addons=collect([]);
-            foreach ($group as $key => $addon) {
-                $addons->push([
-                    'slack' => $addon->slack,
-                ]);
-            }
-            return $addons->toArray();
-
+return $group;
         }):[] ;
 
         $block_recurring_data = (isset($this->block_recurring_data))?$this->block_recurring_data:false;
@@ -58,21 +50,22 @@ dd($group);
         $variants_by_options_pos = [];
         $parent_variant_option = [];
         if($block_recurring_data == false){
-            $product_variants = $this->product_variants($this->id);
-            $variants = ProductVariantResource::collection($product_variants['product_variants']);
+            $variants= $this->variants;
+            // $product_variants = $this->product_variants($this->id);
+            // $variants = ProductVariantResource::collection($product_variants['product_variants']);
 
-            $variants_collection = collect($variants);
-            $variants_by_options = $variants_collection->groupBy('variant_option.label');
-            $variants_by_options->toArray();
+            // $variants_collection = collect($variants);
+            // $variants_by_options = $variants_collection->groupBy('variant_option.label');
+            // $variants_by_options->toArray();
             
-            $parent_variant_option = $product_variants['parent_variant_option'];
+            // $parent_variant_option = $product_variants['parent_variant_option'];
 
-            $product_variants_pos = $this->product_variants($this->id, false);
-            $variants_pos = ProductVariantResource::collection($product_variants_pos['product_variants']);
+            // $product_variants_pos = $this->product_variants($this->id, false);
+            // $variants_pos = ProductVariantResource::collection($product_variants_pos['product_variants']);
 
-            $variants_pos_collection = collect($variants_pos);
-            $variants_by_options_pos = $variants_pos_collection->sortBy('product.name')->groupBy('variant_option.label');
-            $variants_by_options_pos->toArray();
+            // $variants_pos_collection = collect($variants_pos);
+            // $variants_by_options_pos = $variants_pos_collection->sortBy('product.name')->groupBy('variant_option.label');
+            // $variants_by_options_pos->toArray();
         }
 
         return [
