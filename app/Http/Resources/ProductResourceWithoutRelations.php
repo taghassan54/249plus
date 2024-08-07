@@ -20,9 +20,7 @@ class ProductResourceWithoutRelations extends JsonResource
     public function toArray($request)
     {
 
-        return [
-            'slack' => $this->slack,
-        ];
+       
         $ingredients = ProductIngredientResource::collection($this->ingredients);
      
         $ingredients_collection = collect($ingredients);
@@ -67,11 +65,13 @@ class ProductResourceWithoutRelations extends JsonResource
             'purchase_amount_excluding_tax' => $this->purchase_amount_excluding_tax,
             'sale_amount_excluding_tax' => $this->sale_amount_excluding_tax,
             'sale_amount_including_tax' => $this->sale_amount_including_tax,
-            'category' => new CategoryResource($this->category),
-            'supplier' => new SupplierResource($this->supplier),
-            'tax_code' => new TaxcodeResource($this->tax_code),
-            'discount_code' => new DiscountcodeResource($this->discount_code),
-            'images' => ProductImageResource::collection($this->product_images),
+            'category' => $this->category?$this->category->slack:'',
+            'supplier' => $this->supplier?$this->supplier->slack:'',
+            'tax_code' => $this->tax_code?$this->tax_code->slack:'',
+            'discount_code' => $this->discount_code?$this->discount_code->slack:'',
+            'images' => $this->product_images?$this->product_images->map(($image)=>{
+                "slake":$image->slack
+            }),
             'is_ingredient' => $this->is_ingredient,
             'is_ingredient_price' => $this->is_ingredient_price,
             'ingredients' => $ingredients,
@@ -83,12 +83,12 @@ class ProductResourceWithoutRelations extends JsonResource
              'variants_by_options_pos' => isset($variants_by_options_pos)?$variants_by_options_pos:NULL,
             'parent_variant_option' => isset($parent_variant_option)?$parent_variant_option:NULL,
             'customizable' => ($addon_groups->isEmpty())?0:1,
-            'status' => new MasterStatusResource($this->status_data),
+            'status' =>$this->status_data?$this->status_data->value_constant:'',
             'detail_link' => (check_access(['A_DETAIL_PRODUCT'], true))?route('product', ['slack' => $this->slack]):'',
             'created_at_label' => $this->parseDate($this->created_at),
             'updated_at_label' => $this->parseDate($this->updated_at),
-            'created_by' => new UserResource($this->createdUser),
-            'updated_by' => new UserResource($this->updatedUser)
+            'created_by' => $this->createdUser?$this->createdUser->slack:'',
+            'updated_by' => $this->updatedUser?$this->updatedUser->slack:''
         ];
     }
 }
