@@ -69,9 +69,11 @@ class ProductResourceWithoutRelations extends JsonResource
             'supplier' => $this->supplier?$this->supplier->slack:'',
             'tax_code' => $this->tax_code?$this->tax_code->slack:'',
             'discount_code' => $this->discount_code?$this->discount_code->slack:'',
-            'images' => $this->product_images?$this->product_images->map(($image)=>{
-                "slake":$image->slack
-            }),
+            'images' => $this->product_images ? $this->product_images->map(function($image) {
+                return [
+                    'slack' => $image->slack,
+                ];
+            }) : [],
             'is_ingredient' => $this->is_ingredient,
             'is_ingredient_price' => $this->is_ingredient_price,
             'ingredients' => $ingredients,
