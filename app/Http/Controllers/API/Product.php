@@ -400,9 +400,15 @@ class Product extends Controller
 
                 $products = ProductModel::orderBy('created_at', 'desc')->get();
 
-                return $products;
+              
+            return response()->json($this->generate_response(
+                array(
+                    "message" => "Products loaded successfully", 
+                    "data"    => $products
+                ), 'SUCCESS'
+            ));
 
-            }
+            }else{
 // Fetch products with related models using eager loading
 $products = ProductModel::with([
     'createdUser',
@@ -482,16 +488,18 @@ $products = ProductModel::with([
     'addon_groups.createdUser',
     'addon_groups.updatedUser',
 ])->orderBy('created_at', 'desc')->get();
-
 // Pass the products to the ProductCollection
 $list = new ProductCollection($products);
 
-            return response()->json($this->generate_response(
-                array(
-                    "message" => "Products loaded successfully", 
-                    "data"    => $list
-                ), 'SUCCESS'
-            ));
+return response()->json($this->generate_response(
+    array(
+        "message" => "Products loaded successfully", 
+        "data"    => $list
+    ), 'SUCCESS'
+));
+            }
+
+
 
         }catch(Exception $e){
             return response()->json($this->generate_response(
