@@ -394,31 +394,7 @@ class Product extends Controller
                 throw new Exception("Invalid request", 400);
             }
 
-            // $list = new ProductCollection(ProductModel::select('*')
-            // ->orderBy('created_at', 'desc')->paginate(ProductModel::count()));
-
-            if($request->has('withRelations') && ($request->withRelations == false || $request->withRelations == "false") ){
-                $query = ProductModel::select('products.*')
-                ->categoryJoin()
-                ->supplierJoin()
-                ->taxcodeJoin()
-                ->discountcodeJoin()
-                ->categoryActive()
-                ->supplierActive()
-                ->taxcodeActive()
-                ->quantityCheck()
-                ->active()
-                ->mainProduct();
-                $products= $query->get();
-              
-            return response()->json($this->generate_response(
-                array(
-                    "message" => "Products loaded successfully", 
-                    "data"    => $products
-                ), 'SUCCESS'
-            ));
-
-            }else{
+        
 // Fetch products with related models using eager loading
 $products = ProductModel::with([
     'createdUser',
@@ -509,7 +485,7 @@ return response()->json($this->generate_response(
         "data"    => $list
     ), 'SUCCESS'
 ));
-            }
+            
 
 
 
