@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Notification extends Model
 {
     protected $table = 'notifications';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'user_id', 'store_id', 'notification_text', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

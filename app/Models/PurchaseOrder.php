@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class PurchaseOrder extends Model
 {
     protected $table = 'purchase_orders';
-    protected $hidden = [ 'store_id', 'supplier_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'po_number', 'po_reference', 'order_date', 'order_due_date', 'supplier_id', 'supplier_code', 'supplier_name', 'supplier_address', 'currency_name', 'currency_code', 'tax_option_id', 'subtotal_excluding_tax', 'total_discount_amount', 'total_after_discount', 'total_tax_amount', 'shipping_charge', 'packing_charge', 'total_order_amount', 'terms', 'update_stock', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

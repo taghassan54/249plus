@@ -14,7 +14,7 @@ use App\Models\Scopes\StoreScope;
 class Order extends Model
 {
     protected $table = 'orders';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'order_number', 'customer_id', 'customer_name', 'customer_phone', 'customer_email', 'contact_number', 'address', 'register_id', 'store_level_discount_code_id', 'store_level_discount_code', 'store_level_total_discount_percentage', 'store_level_total_discount_amount', 'product_level_total_discount_amount', 'store_level_tax_code_id', 'store_level_tax_code', 'store_level_total_tax_percentage', 'store_level_total_tax_amount', 'store_level_total_tax_components', 'product_level_total_tax_amount', 'purchase_amount_subtotal_excluding_tax', 'sale_amount_subtotal_excluding_tax', 'total_discount_before_additional_discount', 'total_amount_before_additional_discount', 'additional_discount_percentage', 'additional_discount_amount', 'total_discount_amount', 'total_after_discount', 'total_tax_amount', 'total_order_amount', 'total_order_amount_rounded', 'payment_method_id', 'payment_method_slack', 'payment_method', 'currency_name', 'currency_code', 'business_account_id', 'order_type_id', 'order_type', 'restaurant_mode', 'table_id', 'table_number', 'waiter_id', 'bill_type_id', 'bill_type', 'order_origin', 'status', 'kitchen_status', 'payment_status', 'order_merged', 'order_merge_parent_id', 'kitchen_screen_dismissed', 'waiter_screen_dismissed', 'created_by', 'updated_by', 'quantity_updated_on', 'created_at', 'updated_at'];
 
     protected static function boot()

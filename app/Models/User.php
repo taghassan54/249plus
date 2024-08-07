@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class User extends Model
 {
     protected $table = 'users';
-    protected $hidden = [ 'password', 'role_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'user_code', 'fullname', 'email', 'password', 'init_password', 'phone', 'profile_image', 'role_id', 'status', 'created_by', 'updated_by'];
 
     public function scopeActive($query){

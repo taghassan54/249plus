@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Supplier extends Model
 {
     protected $table = 'suppliers';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'supplier_code', 'name', 'email', 'phone', 'address', 'pincode', 'status', 'created_by', 'updated_by'];
 
     protected static function boot()

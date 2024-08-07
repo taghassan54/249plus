@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MeasurementUnit extends Model
 {
     protected $table = 'measurement_units';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'unit_code', 'label', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

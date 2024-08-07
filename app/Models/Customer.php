@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     protected $table = 'customers';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'customer_type', 'name', 'email', 'phone', 'address', 'dob', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     public function scopeActive($query){

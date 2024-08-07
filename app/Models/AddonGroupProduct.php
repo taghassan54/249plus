@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AddonGroupProduct extends Model
 {
     protected $table = 'addon_group_products';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['addon_group_id', 'product_id', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

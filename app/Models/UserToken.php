@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserToken extends Model
 {
     protected $table = 'user_access_tokens';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['user_id', 'access_token', 'session_id'];
 
     public function scopeGetUserToken($query, $user_id, $access_token)

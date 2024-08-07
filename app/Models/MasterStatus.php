@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MasterStatus extends Model
 {
     protected $table = 'master_status';
-    protected $hidden = ['id'];
+    protected $hidden = [];
 
     public function scopeActive($query){
         return $query->where('status', 1);

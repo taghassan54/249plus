@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MasterAccountType extends Model
 {
     protected $table = 'master_account_type';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['account_type_constant', 'label', 'description', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

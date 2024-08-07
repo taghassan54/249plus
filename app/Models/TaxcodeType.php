@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TaxcodeType extends Model
 {
     protected $table = 'tax_code_type';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['tax_code_id', 'tax_type', 'tax_percentage', 'created_by', 'created_at', 'updated_at'];
 
     public function scopeTaxCode($query){

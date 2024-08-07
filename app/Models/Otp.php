@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Otp extends Model
 {
     protected $table = 'otp';
-    protected $hidden = [ 'user_id', 'customer_id'];
+    protected $hidden = [];
     protected $fillable = ['event_type', 'user_id', 'customer_id', 'email', 'phone', 'otp', 'generate_counter', 'created_at', 'updated_at'];
 
 }

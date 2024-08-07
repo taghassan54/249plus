@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserStore extends Model
 {
     protected $table = 'user_stores';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['user_id', 'store_id', 'created_by'];
 
     public function user(){

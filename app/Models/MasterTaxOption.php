@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MasterTaxOption extends Model
 {
     protected $table = 'master_tax_option';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['tax_option_constant', 'label', 'description', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

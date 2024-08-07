@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductIngredient extends Model
 {
     protected $table = 'product_ingredients';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'product_id', 'ingredient_product_id', 'quantity', 'measurement_unit_id', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

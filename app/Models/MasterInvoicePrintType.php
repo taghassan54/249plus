@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MasterInvoicePrintType extends Model
 {
     protected $table = 'master_invoice_print_type';
-    protected $hidden = ['id'];
+    protected $hidden = [];
 
     public function scopeActive($query){
         return $query->where('status', 1);

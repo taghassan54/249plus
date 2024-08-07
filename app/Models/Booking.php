@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Booking extends Model
 {
     protected $table = 'bookings';
-    protected $hidden = [ 'store_id'];
+    protected $hidden = [ ];
     protected $fillable = ['slack', 'store_id', 'event_code', 'event_type', 'start_date', 'end_date', 'name', 'email', 'phone', 'description', 'no_of_persons', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

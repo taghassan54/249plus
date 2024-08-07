@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserMenu extends Model
 {
     protected $table = 'user_menus';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['user_id', 'menu_id', 'created_by'];
 
     public function user(){

@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Table extends Model
 {
     protected $table = 'restaurant_tables';
-    protected $hidden = [ 'store_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'table_number', 'no_of_occupants', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

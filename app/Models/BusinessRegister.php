@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class BusinessRegister extends Model
 {
     protected $table = 'business_registers';
-    protected $hidden = [ 'store_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'user_id', 'billing_counter_id', 'parent_register_id', 'current_register', 'opening_date', 'closing_date', 'joining_date', 'exit_date', 'opening_amount', 'closing_amount', 'credit_card_slips', 'cheques', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

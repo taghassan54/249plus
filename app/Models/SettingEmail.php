@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SettingEmail extends Model
 {
     protected $table = 'setting_mail';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'type', 'driver', 'host', 'port', 'encryption', 'username', 'password', 'from_email', 'from_email_name', 'status', 'created_by', 'updated_by'];
 
     public function scopeActive($query){

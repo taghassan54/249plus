@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Taxcode extends Model
 {
     protected $table = 'tax_codes';
-    protected $hidden = [ 'store_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'tax_type', 'tax_code', 'label', 'tax_percentage', 'description', 'status', 'created_by', 'updated_by'];
 
     protected static function boot()

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Language extends Model
 {
     protected $table = 'languages';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['language_constant', 'language_code', 'language', 'status', 'created_by', 'updated_by'];
 
     public function scopeActive($query){

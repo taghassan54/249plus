@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class StockTransfer extends Model
 {
     protected $table = 'stock_transfer';
-    protected $hidden = [ 'store_id', 'from_store_id' , 'to_store_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'stock_transfer_reference', 'from_store_id', 'from_store_code', 'from_store_name', 'to_store_id', 'to_store_code', 'to_store_name', 'notes', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

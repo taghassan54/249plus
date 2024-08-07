@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MasterTransactionType extends Model
 {
     protected $table = 'master_transaction_type';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['transaction_type_constant', 'label', 'description', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class ProductAddonGroup extends Model
 {
     protected $table = 'product_addon_groups';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['product_id', 'addon_group_id', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

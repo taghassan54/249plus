@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MasterDateFormat extends Model
 {
     protected $table = 'master_date_format';
-    protected $hidden = ['id'];
+    protected $hidden = [];
 
     public function scopeActive($query){
         return $query->where('status', 1);

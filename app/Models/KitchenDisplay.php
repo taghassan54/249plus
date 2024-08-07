@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class KitchenDisplay extends Model
 {
     protected $table = 'kitchen_displays';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'kitchen_display_code', 'label', 'categories', 'orange_timer', 'red_timer', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

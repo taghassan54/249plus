@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class AddonGroup extends Model
 {
     protected $table = 'addon_groups';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'addon_group_code', 'label', 'multiple_selection', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

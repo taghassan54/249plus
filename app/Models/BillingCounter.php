@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class BillingCounter extends Model
 {
     protected $table = 'billing_counters';
-    protected $hidden = [ 'store_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'billing_counter_code', 'counter_name', 'description', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

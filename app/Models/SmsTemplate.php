@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SmsTemplate extends Model
 {
     protected $table = 'sms_templates';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'template_key', 'message', 'available_variables', 'flow_id', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

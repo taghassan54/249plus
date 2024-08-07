@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Printer extends Model
 {
     protected $table = 'printers';
-    protected $hidden = [ 'store_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'store_id', 'printer_code', 'printer_id', 'printer_name', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

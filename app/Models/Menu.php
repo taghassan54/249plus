@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     protected $table = 'menus';
-    protected $hidden = ['id'];
+    protected $hidden = [];
 
     public function scopeActive($query){
         return $query->where('status', 1);

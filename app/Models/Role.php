@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     protected $table = 'roles';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'role_code', 'label', 'status', 'created_by', 'updated_by'];
 
     public function scopeActive($query){

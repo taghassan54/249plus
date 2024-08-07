@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class PaymentMethod extends Model
 {
     protected $table = 'payment_methods';
-    protected $hidden = [ 'store_id'];
+    protected $hidden = [ ];
     protected $fillable = ['slack', 'label', 'key_1', 'key_2', 'description', 'activate_on_digital_menu', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class QuotationProduct extends Model
 {
     protected $table = 'quotation_products';
-    protected $hidden = [ 'quotation_id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'quotation_id', 'product_id', 'product_slack', 'product_code', 'name', 'quantity', 'amount_excluding_tax', 'subtotal_amount_excluding_tax', 'discount_percentage', 'tax_percentage', 'discount_amount', 'total_after_discount', 'tax_amount', 'tax_components', 'total_amount', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     public function scopeProduct($query){

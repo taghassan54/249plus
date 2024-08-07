@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductImages extends Model
 {
     protected $table = 'product_images';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'product_id', 'filename', 'status', 'created_by', 'updated_by'];
 
     protected static function boot()

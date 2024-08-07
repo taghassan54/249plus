@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class KeyboardShortcut extends Model
 {
     protected $table = 'keyboard_shortcuts';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['keyboard_constant', 'keyboard_shortcut', 'keyboard_shortcut_label', 'description', 'sort_order', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SettingSms extends Model
 {
     protected $table = 'setting_sms_gateways';
-    protected $hidden = ['id'];
+    protected $hidden = [];
     protected $fillable = ['slack', 'gateway_type', 'account_id', 'token', 'twilio_number', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     public function scopeActive($query){
