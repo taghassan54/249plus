@@ -21,16 +21,7 @@ class ProductResourceWithoutRelations extends JsonResource
     {
 
        
-        $ingredients = $this->ingredients?$this->ingredients->map(function($ingredient){
-            $low_stock = 0;
-            if(!empty($ingredient->ingredient_product)){
-                $low_stock = ($ingredient->quantity<=$ingredient->alert_quantity)?1:0;
-            }
-return [
- 'slack' => $ingredient->slack,
- 'low_stock' => $low_stock,
-];
-        }):[] ;
+        $ingredients = [] ;
      
         $ingredients_collection = collect($ingredients);
         $low_ingredient_stock = $ingredients_collection->map(function ($item, $key) {
@@ -48,7 +39,6 @@ return [
         $variants_by_options_pos = [];
         $parent_variant_option = [];
        
-
         return [
             'slack' => $this->slack,
             'product_code' => $this->product_code,
