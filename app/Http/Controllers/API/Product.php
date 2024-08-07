@@ -473,7 +473,7 @@ $products = ProductModel::with([
     'addon_groups.addon_group.addon_products',
     'addon_groups.createdUser',
     'addon_groups.updatedUser',
-])->orderBy('created_at', 'desc')->paginate();
+])->orderBy('created_at', 'desc')->paginate(ProductModel::count());
 
 // return $products;
 // Pass the products to the ProductCollection
