@@ -396,6 +396,13 @@ class Product extends Controller
             // $list = new ProductCollection(ProductModel::select('*')
             // ->orderBy('created_at', 'desc')->paginate(ProductModel::count()));
 
+            if(request()->has('withRelations') && request()->withRelations ==false ){
+
+                $products = ProductModel::orderBy('created_at', 'desc')->get();
+
+                return $products;
+
+            }
 // Fetch products with related models using eager loading
 $products = ProductModel::with([
     'createdUser',
