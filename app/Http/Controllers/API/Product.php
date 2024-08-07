@@ -38,7 +38,7 @@ use App\Http\Resources\ProductResource;
 use App\Http\Resources\AddonGroupResource;
 
 use App\Http\Resources\Collections\ProductCollection;
-use App\Http\Resources\Collections\ProductResourceWithoutRelations;
+use App\Http\Resources\ProductResourceWithoutRelations;
 
 use Mpdf\Mpdf;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -473,11 +473,11 @@ $products = ProductModel::with([
     'addon_groups.addon_group.addon_products',
     'addon_groups.createdUser',
     'addon_groups.updatedUser',
-])->orderBy('created_at', 'desc')->get();
+])->orderBy('created_at', 'desc')->paginate();
 
 // return $products;
 // Pass the products to the ProductCollection
-$list = new ProductResourceWithoutRelations($products);
+$list = new ProductResourceWithoutRelations::collection($products);
 
 return response()->json($this->generate_response(
     array(
