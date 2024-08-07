@@ -14,7 +14,14 @@ class MobileData extends Controller {
 //$modelClass = resolve('App\\Models\\' . $modelName);
 $modelClass = resolve('App\\Models\\' . $model);
 $className = get_class($modelClass);
-return $className::all();
+$data= $className::all();
+
+return response()->json($this->generate_response(
+    array(
+        "message" => $model." list loaded successfully", 
+        "data"    => $data
+    ), 'SUCCESS'
+));
 
     }
 
