@@ -477,7 +477,7 @@ $products = ProductModel::with([
 
 // return $products;
 // Pass the products to the ProductCollection
-$list = new ProductResourceWithoutRelations::collection($products);
+$list = new ProductCollection($products);
 
 return response()->json($this->generate_response(
     array(
