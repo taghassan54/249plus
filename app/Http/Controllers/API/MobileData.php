@@ -12,7 +12,10 @@ class MobileData extends Controller {
     public function index(Request $request,$model)
     {
 
-return $model;
+      
+$modelClass = App::make('App\\Models\\' . $$model);
+$className = get_class($modelClass);
+return $className;
 
     }
 
