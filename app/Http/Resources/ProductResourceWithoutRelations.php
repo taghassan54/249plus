@@ -41,9 +41,13 @@ return [
 
         $addon_groups =$this->addon_groups? $this->addon_groups->map(function($addon_group){
 
-            return [
-                'slack' => $addon_group->slack,
-            ];
+            $addons=collect([]);
+            foreach ($addon_group as $key => $addon) {
+                $addons->push([
+                    'slack' => $addon_group->slack,
+                ]);
+            }
+            return $addons->toArray();
 
         }):[] ;
 
