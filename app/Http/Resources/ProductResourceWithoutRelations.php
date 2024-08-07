@@ -44,7 +44,7 @@ return [
             $addons=collect([]);
             foreach ($addon_group as $key => $addon) {
                 $addons->push([
-                    'slack' => $addon_group->slack,
+                    'slack' => $addon->slack,
                 ]);
             }
             return $addons->toArray();
