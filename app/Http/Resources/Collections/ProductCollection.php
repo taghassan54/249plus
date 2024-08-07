@@ -15,8 +15,9 @@ class ProductCollection extends ResourceCollection
      */
     public function toArray($request)
     {
+
         return [
-            'data' => ProductResource::collection($this->collection),
+            'data' => request()->has('withRelations') && (request()->withRelations==false || request()->withRelations=="false")?ProductResourceWithoutRelations::collection($this->collection) : ProductResource::collection($this->collection),
             'links' => [
                'has_more_items' => $this->hasMorePages()??false,
                'current_page' => $this->currentPage()??1,

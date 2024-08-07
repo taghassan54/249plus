@@ -19,6 +19,10 @@ class ProductResourceWithoutRelations extends JsonResource
      */
     public function toArray($request)
     {
+
+        return [
+            'slack' => $this->slack,
+        ];
         $ingredients = ProductIngredientResource::collection($this->ingredients);
      
         $ingredients_collection = collect($ingredients);
