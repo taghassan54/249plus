@@ -499,7 +499,7 @@ $products = ProductModel::with([
     'addon_groups.updatedUser',
 ])->orderBy('created_at', 'desc')->get();
 
-return $products;
+// return $products;
 // Pass the products to the ProductCollection
 $list = new ProductResourceWithoutRelations($products);
 
