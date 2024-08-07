@@ -395,8 +395,8 @@ class Product extends Controller
 
             // $list = new ProductCollection(ProductModel::select('*')
             // ->orderBy('created_at', 'desc')->paginate(ProductModel::count()));
-
-            if(request()->has('withRelations') && request()->withRelations ==false ){
+dd($request->all());
+            if($request->has('withRelations') && $request->withRelations == false ){
 
                 $products = ProductModel::orderBy('created_at', 'desc')->get();
 
