@@ -38,6 +38,7 @@ use App\Http\Resources\ProductResource;
 use App\Http\Resources\AddonGroupResource;
 
 use App\Http\Resources\Collections\ProductCollection;
+use App\Http\Resources\Collections\ProductResourceWithoutRelations;
 
 use Mpdf\Mpdf;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -500,7 +501,7 @@ $products = ProductModel::with([
 
 return $products;
 // Pass the products to the ProductCollection
-$list = new ProductCollection($products);
+$list = new ProductResourceWithoutRelations($products);
 
 return response()->json($this->generate_response(
     array(
