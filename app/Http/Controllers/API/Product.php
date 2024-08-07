@@ -395,11 +395,20 @@ class Product extends Controller
 
             // $list = new ProductCollection(ProductModel::select('*')
             // ->orderBy('created_at', 'desc')->paginate(ProductModel::count()));
-// dd($request->all());
+
             if($request->has('withRelations') && ($request->withRelations == false || $request->withRelations == "false") ){
-
-                $products = ProductModel::orderBy('created_at', 'desc')->get();
-
+                $query = ProductModel::select('products.*')
+                ->categoryJoin()
+                ->supplierJoin()
+                ->taxcodeJoin()
+                ->discountcodeJoin()
+                ->categoryActive()
+                ->supplierActive()
+                ->taxcodeActive()
+                ->quantityCheck()
+                ->active()
+                ->mainProduct();
+                $products= $query->get();
               
             return response()->json($this->generate_response(
                 array(
