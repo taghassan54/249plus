@@ -2,6 +2,10 @@
 namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\File;
+
+
 class MobileData extends Controller {
 
      /**
@@ -24,5 +28,24 @@ return response()->json($this->generate_response(
 ));
 
     }
+
+    public  function getAllModelNames()
+{
+    $modelPath = app_path('Models');
+    $modelFiles = File::allFiles($modelPath);
+    $modelNames = [];
+
+    foreach ($modelFiles as $file) {
+        $modelNames[] = pathinfo($file->getFilename(), PATHINFO_FILENAME);
+    }
+
+    return response()->json($this->generate_response(
+        array(
+            "message" => " list loaded successfully", 
+            "data"    => $modelNames
+        ), 'SUCCESS'
+    ));
+    
+}
 
 }

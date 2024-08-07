@@ -40,6 +40,7 @@ Route::post('/get_qr_order_history', 'API\Order@get_qr_order_history');
 Route::group(['middleware' => ['token_auth']], function () {
 
     Route::post('/{model}/get', 'API\MobileData@index');
+    Route::post('/getAllModelNames', 'API\MobileData@getAllModelNames');
 
     //user
     Route::post('/users', 'API\User@index');
