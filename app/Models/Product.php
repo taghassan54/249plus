@@ -12,7 +12,7 @@ use App\Models\Scopes\StoreScope;
 class Product extends Model
 {
     protected $table = 'products';
-    protected $hidden = ['id', 'store_id'];
+    protected $hidden = [ 'store_id'];
     protected $fillable = ['slack', 'store_id', 'product_code', 'name', 'description', 'category_id', 'supplier_id', 'tax_code_id', 'discount_code_id', 'quantity', 'alert_quantity', 'purchase_amount_excluding_tax', 'sale_amount_excluding_tax', 'sale_amount_including_tax', 'is_ingredient', 'is_ingredient_price', 'is_addon_product', 'status', 'created_by', 'updated_by'];
 
     protected static function boot()

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
     protected $table = 'stores';
-    protected $hidden = ['id', 'store_id', 'discount_code_id', 'tax_code_id', 'created_by', 'updated_by', 'printnode_api_key'];
+    protected $hidden = [ 'store_id', 'discount_code_id', 'tax_code_id', 'created_by', 'updated_by', 'printnode_api_key'];
     protected $fillable = ['slack', 'store_code', 'name', 'tax_number', 'tax_code_id', 'discount_code_id', 'address', 'country_id', 'pincode', 'primary_contact', 'secondary_contact', 'primary_email', 'secondary_email', 'invoice_type', 'currency_name', 'currency_code', 'restaurant_mode', 'restaurant_waiter_role_id', 'restaurant_chef_role_id', 'restaurant_billing_type_id', 'enable_customer_popup', 'enable_variants_popup', 'digital_menu_enabled', 'enable_digital_menu_otp_verification', 'digital_menu_send_order_to_kitchen', 'menu_language_id', 'menu_open_time', 'menu_close_time', 'printnode_enabled', 'printnode_api_key', 'pos_printer_id', 'kot_printer_id', 'other_printer_id', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     public function scopeActive($query){

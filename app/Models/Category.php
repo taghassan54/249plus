@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Category extends Model
 {
     protected $table = 'category';
-    protected $hidden = ['id', 'store_id'];
+    protected $hidden = [ 'store_id'];
     protected $fillable = ['slack', 'store_id', 'category_code', 'label', 'description', 'display_on_pos_screen', 'display_on_qr_menu', 'status', 'created_by', 'updated_by'];
 
     protected static function boot()

@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class StockReturn extends Model
 {
     protected $table = 'stock_returns';
-    protected $hidden = ['id', 'store_id', 'bill_to_id'];
+    protected $hidden = [ 'store_id', 'bill_to_id'];
     protected $fillable = ['slack', 'store_id', 'return_number', 'return_date', 'bill_to', 'bill_to_id', 'bill_to_code', 'bill_to_name', 'bill_to_email', 'bill_to_contact', 'bill_to_address', 'currency_name', 'currency_code', 'tax_option_id', 'subtotal_excluding_tax', 'total_discount_amount', 'total_after_discount', 'total_tax_amount', 'shipping_charge', 'packing_charge', 'total_order_amount', 'notes', 'update_stock', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

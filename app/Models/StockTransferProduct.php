@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StockTransferProduct extends Model
 {
     protected $table = 'stock_transfer_products';
-    protected $hidden = ['id', 'stock_transfer_id', 'product_id', 'destination_product_id'];
+    protected $hidden = [ 'stock_transfer_id', 'product_id', 'destination_product_id'];
     protected $fillable = ['slack', 'stock_transfer_id', 'product_id', 'product_slack', 'product_code', 'product_name', 'quantity', 'inward_type', 'accepted_quantity', 'destination_product_id', 'destination_product_slack', 'destination_product_code', 'destination_product_name', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     public function scopeProduct($query){

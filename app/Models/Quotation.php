@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Quotation extends Model
 {
     protected $table = 'quotations';
-    protected $hidden = ['id', 'store_id', 'supplier_id'];
+    protected $hidden = [ 'store_id', 'supplier_id'];
     protected $fillable = ['slack', 'store_id', 'quotation_number', 'quotation_reference', 'quotation_date', 'quotation_due_date', 'subject', 'bill_to', 'bill_to_id', 'bill_to_code', 'bill_to_name', 'bill_to_email', 'bill_to_contact', 'bill_to_address', 'currency_name', 'currency_code', 'tax_option_id', 'subtotal_excluding_tax', 'total_discount_amount', 'total_after_discount', 'total_tax_amount', 'shipping_charge', 'packing_charge', 'total_order_amount', 'notes', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

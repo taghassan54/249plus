@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Account extends Model
 {
     protected $table = 'accounts';
-    protected $hidden = ['id', 'store_id'];
+    protected $hidden = [ 'store_id'];
     protected $fillable = ['slack', 'store_id', 'account_code', 'account_type', 'label', 'initial_balance', 'description', 'pos_default', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     protected static function boot()

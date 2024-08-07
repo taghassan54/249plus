@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class Target extends Model
 {
     protected $table = 'targets';
-    protected $hidden = ['id', 'store_id'];
+    protected $hidden = [ 'store_id'];
     protected $fillable = ['slack', 'store_id', 'month', 'income', 'expense', 'sales', 'net_profit', 'created_by', 'updated_by'];
 
     protected static function boot()

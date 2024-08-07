@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StockReturnProduct extends Model
 {
     protected $table = 'stock_return_products';
-    protected $hidden = ['id', 'stock_return_id', 'product_id'];
+    protected $hidden = [ 'stock_return_id', 'product_id'];
     protected $fillable = ['slack', 'stock_return_id', 'product_id', 'product_slack', 'product_code', 'name', 'quantity', 'amount_excluding_tax', 'subtotal_amount_excluding_tax', 'discount_percentage', 'tax_percentage', 'discount_amount', 'total_after_discount', 'tax_amount', 'tax_components', 'total_amount', 'stock_update', 'status', 'created_by', 'updated_by', 'created_at', 'updated_at'];
 
     public function scopeProduct($query){

@@ -10,7 +10,7 @@ use App\Models\Scopes\StoreScope;
 class VariantOption extends Model
 {
     protected $table = 'variant_options';
-    protected $hidden = ['id', 'store_id'];
+    protected $hidden = [ 'store_id'];
     protected $fillable = ['slack', 'store_id', 'variant_option_code', 'label', 'status', 'created_by', 'updated_by'];
 
     protected static function boot()
