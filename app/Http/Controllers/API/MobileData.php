@@ -14,7 +14,7 @@ class MobileData extends Controller {
 //$modelClass = resolve('App\\Models\\' . $modelName);
 $modelClass = resolve('App\\Models\\' . $model);
 $className = get_class($modelClass);
-return $className;
+return $className::all();
 
     }
 
