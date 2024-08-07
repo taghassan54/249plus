@@ -39,7 +39,7 @@ return [
         $low_ingredient_stock = (!empty($low_ingredient_stock))?in_array(1, $low_ingredient_stock):false;
        
 
-        $addon_groups =[] ;
+        $addon_groups =collect([]) ;
 
         $block_recurring_data = (isset($this->block_recurring_data))?$this->block_recurring_data:false;
 
