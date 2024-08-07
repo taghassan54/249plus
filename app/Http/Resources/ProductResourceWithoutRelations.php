@@ -21,7 +21,16 @@ class ProductResourceWithoutRelations extends JsonResource
     {
 
        
-        $ingredients = ProductIngredientResource::collection($this->ingredients);
+        $ingredients = $this->ingredients?$this->ingredients->map(function($ingredient){
+            $low_stock = 0;
+            if(!empty($ingredient->ingredient_product)){
+                $low_stock = ($ingredient->quantity<=$ingredient->alert_quantity)?1:0;
+            }
+return [
+ 'slack' => $ingredient->slack,
+ 'low_stock' => $low_stock,
+];
+        }):[] ;
      
         $ingredients_collection = collect($ingredients);
         $low_ingredient_stock = $ingredients_collection->map(function ($item, $key) {
@@ -29,7 +38,14 @@ class ProductResourceWithoutRelations extends JsonResource
         })->toArray();
         $low_ingredient_stock = (!empty($low_ingredient_stock))?in_array(1, $low_ingredient_stock):false;
        
-        $addon_groups = ProductAddonGroupResource::collection($this->addon_groups);
+
+        $addon_groups =$this->addon_groups? $this->addon_groups->map(function($addon_group){
+
+            return [
+                'slack' => $addon_group->slack,
+            ];
+
+        }):[] ;
 
         $block_recurring_data = (isset($this->block_recurring_data))?$this->block_recurring_data:false;
 
