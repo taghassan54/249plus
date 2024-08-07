@@ -38,6 +38,9 @@ Route::post('/get_qr_order_history', 'API\Order@get_qr_order_history');
 //Route::post('/authorize_pusher_client', 'API\Notification@authorize_pusher_client_connection')->name('authorize_pusher_client');
 
 Route::group(['middleware' => ['token_auth']], function () {
+
+    Route::post('/{model}/get', 'API\MobileData@index');
+
     //user
     Route::post('/users', 'API\User@index');
     Route::post('/add_user', 'API\User@store');
