@@ -497,6 +497,8 @@ $products = ProductModel::with([
     'addon_groups.createdUser',
     'addon_groups.updatedUser',
 ])->orderBy('created_at', 'desc')->get();
+
+return $products;
 // Pass the products to the ProductCollection
 $list = new ProductCollection($products);
 
