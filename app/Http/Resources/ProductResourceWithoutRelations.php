@@ -39,10 +39,10 @@ return [
         $low_ingredient_stock = (!empty($low_ingredient_stock))?in_array(1, $low_ingredient_stock):false;
        
 
-        $addon_groups =$this->addon_groups? $this->addon_groups->map(function($addon_group){
-
+        $addon_groups =$this->addon_groups? $this->addon_groups->map(function($group){
+dd($group);
             $addons=collect([]);
-            foreach ($addon_group as $key => $addon) {
+            foreach ($group as $key => $addon) {
                 $addons->push([
                     'slack' => $addon->slack,
                 ]);
