@@ -39,9 +39,7 @@ return [
         $low_ingredient_stock = (!empty($low_ingredient_stock))?in_array(1, $low_ingredient_stock):false;
        
 
-        $addon_groups =$this->addon_groups? $this->addon_groups->map(function($group){
-return $group;
-        }):[] ;
+        $addon_groups =[] ;
 
         $block_recurring_data = (isset($this->block_recurring_data))?$this->block_recurring_data:false;
 
@@ -49,24 +47,7 @@ return $group;
         $variants_by_options = [];
         $variants_by_options_pos = [];
         $parent_variant_option = [];
-        if($block_recurring_data == false){
-            $variants= $this->variants;
-            // $product_variants = $this->product_variants($this->id);
-            // $variants = ProductVariantResource::collection($product_variants['product_variants']);
-
-            // $variants_collection = collect($variants);
-            // $variants_by_options = $variants_collection->groupBy('variant_option.label');
-            // $variants_by_options->toArray();
-            
-            // $parent_variant_option = $product_variants['parent_variant_option'];
-
-            // $product_variants_pos = $this->product_variants($this->id, false);
-            // $variants_pos = ProductVariantResource::collection($product_variants_pos['product_variants']);
-
-            // $variants_pos_collection = collect($variants_pos);
-            // $variants_by_options_pos = $variants_pos_collection->sortBy('product.name')->groupBy('variant_option.label');
-            // $variants_by_options_pos->toArray();
-        }
+       
 
         return [
             'slack' => $this->slack,
@@ -82,11 +63,7 @@ return $group;
             'supplier' => $this->supplier?$this->supplier->slack:'',
             'tax_code' => $this->tax_code?$this->tax_code->slack:'',
             'discount_code' => $this->discount_code?$this->discount_code->slack:'',
-            'images' => $this->product_images ? $this->product_images->map(function($image) {
-                return [
-                    'slack' => $image->slack,
-                ];
-            }) : [],
+            'images' =>[],
             'is_ingredient' => $this->is_ingredient,
             'is_ingredient_price' => $this->is_ingredient_price,
             'ingredients' => $ingredients,
