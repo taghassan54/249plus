@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             $profile_image = config('constants.upload.profile.view_path').'medium_'.$this->profile_image;
         }
         return [
+            'id' => $this->id,
             'slack' => $this->slack,
             'user_code' => $this->user_code,
             'fullname' => $this->fullname,
