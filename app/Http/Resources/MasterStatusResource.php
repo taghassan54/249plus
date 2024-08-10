@@ -15,6 +15,7 @@ class MasterStatusResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'value' => $this->value,
             'label' => $this->label,
             'color' => $this->color,
