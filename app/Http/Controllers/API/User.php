@@ -135,6 +135,7 @@ class User extends Controller
 
     public function get_available_stores($request, $user_id,$user){
         $user_stores = [];
+        return $user->role;
         if($user->role !=null && $user->role->id == 1){
             $user_stores = StoreModel::select('slack as store_slack','store_code', 'name', 'address')
                 ->active()
