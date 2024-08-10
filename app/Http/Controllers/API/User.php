@@ -100,17 +100,10 @@ class User extends Controller
                         $selected_store = $this->check_store($request, $user_id);
 
                         if(!empty($selected_store)) {
-                          return  $selected_store_data= $selected_store['store_data']->toArray();
-//
-                            $user['restaurant_mode'] = $selected_store_data['logged_user_store_restaurant_mode'];
-
-                            $user['logged_user_store'] = $selected_store['store_id']??null;
-
-
-
-//                            $selected_store_data['store_id']=$selected_store['store_id'];
-//
-//                            $user['logged_user_store'] = $selected_store_data??null;
+                            $selected_store_data= $selected_store['store_data']->toArray();
+                            $user['logged_user_store'] = $selected_store_data['id']??null;
+                        }else{
+                            $user['logged_user_store']=null;
                         }
 
                     }catch (Exception $e) {}
