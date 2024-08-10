@@ -58,7 +58,7 @@ class BillingCounter extends Model
     /* For view files */
 
     public function createdUser(){
-        return $this->hasOne('App\Models\User', 'id', 'created_by')->select(['slack', 'fullname', 'email', 'user_code']);
+        return $this->hasOne('App\Models\User', 'id', 'created_by')->select(['id','slack', 'fullname', 'email', 'user_code']);
     }
 
     public function businessRegister(){
@@ -66,7 +66,7 @@ class BillingCounter extends Model
     }
 
     public function updatedUser(){
-        return $this->hasOne('App\Models\User', 'id', 'updated_by')->select(['slack', 'fullname', 'email', 'user_code']);
+        return $this->hasOne('App\Models\User', 'id', 'updated_by')->select(['id','slack', 'fullname', 'email', 'user_code']);
     }
 
     public function status_data(){

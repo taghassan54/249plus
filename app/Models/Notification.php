@@ -65,11 +65,11 @@ class Notification extends Model
     }
 
     public function createdUser(){
-        return $this->hasOne('App\Models\User', 'id', 'created_by')->select(['slack', 'fullname', 'email', 'user_code', 'profile_image']);
+        return $this->hasOne('App\Models\User', 'id', 'created_by')->select(['id','slack', 'fullname', 'email', 'user_code', 'profile_image']);
     }
 
     public function updatedUser(){
-        return $this->hasOne('App\Models\User', 'id', 'updated_by')->select(['slack', 'fullname', 'email', 'user_code', 'profile_image']);
+        return $this->hasOne('App\Models\User', 'id', 'updated_by')->select(['id','slack', 'fullname', 'email', 'user_code', 'profile_image']);
     }
     
     public function status_data(){
