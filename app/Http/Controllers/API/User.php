@@ -91,7 +91,7 @@ class User extends Controller
 
                         $user['id'] = $user_id;
 
-                        return $user['role'];
+                        return $user['role_id'];
                         $user_stores = $this->get_available_stores($request, $user_id);
 
                         $user['stores'] = $user_stores;
