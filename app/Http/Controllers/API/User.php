@@ -85,19 +85,26 @@ class User extends Controller
                     $user['access_token'] = $access_token;
 
                     try {
-                        $token_decode = (new Controller())->jwt_decode($access_token, env('JWT_KEY', config('aconfig.jwt_key')), ['HS256']);
-                        $decoded_data = $token_decode->sub;
-                        $user_id = $decoded_data->user_id;
+//                        $token_decode = (new Controller())->jwt_decode($access_token, env('JWT_KEY', config('aconfig.jwt_key')), ['HS256']);
+//                        $decoded_data = $token_decode->sub;
+//                        $user_id = $decoded_data->user_id;
 
-                        $selected_store = $this->check_store($request, $user_id);
+//                        $selected_store = $this->check_store($request, $user_id);
 
-                        if(!empty($selected_store)) {
-                            $selected_store_data= $selected_store['store_data']->toArray();
+                        $user['logged_in_user'] = $request->logged_user_id;
+                        $user['restaurant_mode'] = $request->logged_user_store_restaurant_mode;
 
-                            $selected_store_data['store_id']=$selected_store['store_id'];
+                        $user_stores = $this->get_available_stores($request, $user_id);
 
-                            $user['logged_user_store'] = $selected_store_data??null;
-                        }
+//
+//                        if(!empty($selected_store)) {
+//                            $selected_store_data= $selected_store['store_data']->toArray();
+//
+//                            $selected_store_data['store_id']=$selected_store['store_id'];
+//
+//                            $user['logged_user_store'] = $selected_store_data??null;
+//                        }
+
                     }catch (Exception $e) {}
 
                     return response()->json($this->generate_response(
@@ -122,6 +129,26 @@ class User extends Controller
                 )
             ));
         }
+    }
+
+
+    public function get_available_stores($request, $user_id){
+        $user_stores = [];
+        if($request->logged_user_role_id == 1){
+            $user_stores = StoreModel::select('slack as store_slack','store_code', 'name', 'address')
+                ->active()
+                ->orderBy('store_code', 'ASC')
+                ->get();
+        }else{
+            $user_stores = UserStoreModel::select('stores.slack as store_slack','store_code', 'name', 'address')
+                ->where([
+                    ['user_stores.user_id', '=', $user_id ]
+                ])
+                ->storeData()
+                ->orderBy('store_code', 'ASC')
+                ->get();
+        }
+        return (object) $user_stores;
     }
 
     public function check_store($request, $user_id){
