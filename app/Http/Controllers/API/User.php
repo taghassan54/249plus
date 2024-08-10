@@ -130,12 +130,12 @@ class User extends Controller
     public function get_available_stores($role, $user_id){
         $user_stores = [];
         if($role == 1 || $role=="1"){
-            $user_stores = StoreModel::select('id,slack as store_slack','store_code', 'name', 'address')
+            $user_stores = StoreModel::select('stores.id,slack as store_slack','store_code', 'name', 'address')
                 ->active()
                 ->orderBy('store_code', 'ASC')
                 ->get();
         }else{
-            $user_stores = UserStoreModel::select('id,stores.slack as store_slack','store_code', 'name', 'address')
+            $user_stores = UserStoreModel::select('stores.id,stores.slack as store_slack','store_code', 'name', 'address')
                 ->where([
                     ['user_stores.user_id', '=', $user_id ]
                 ])
