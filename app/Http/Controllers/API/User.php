@@ -91,7 +91,7 @@ class User extends Controller
 
                         $user['id'] = $user_id;
 
-                        $user_stores = $this->get_available_stores($request, $user_id);
+                        $user_stores = $this->get_available_stores($request, $user_id,$user);
 
                         $user['stores'] = $user_stores;
 
@@ -133,9 +133,9 @@ class User extends Controller
     }
 
 
-    public function get_available_stores($request, $user_id){
+    public function get_available_stores($request, $user_id,$user){
         $user_stores = [];
-        if($request->logged_user_role_id == 1){
+        if($user->role !=null && $user->role->id == 1){
             $user_stores = StoreModel::select('slack as store_slack','store_code', 'name', 'address')
                 ->active()
                 ->orderBy('store_code', 'ASC')
