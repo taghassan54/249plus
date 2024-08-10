@@ -100,7 +100,9 @@ class User extends Controller
                             $user['logged_user_store'] = $user_detail['store_id']??null;
 
 
-                    }catch (Exception $e) {}
+                    }catch (Exception $e) {
+                        dd($e->getMessage());
+                    }
 
                     return response()->json($this->generate_response(
                         array(
