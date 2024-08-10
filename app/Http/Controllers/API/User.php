@@ -97,7 +97,7 @@ class User extends Controller
 
 
 
-                        $selected_store = $this->check_store($request, $user_id);
+                     return   $selected_store = $this->check_store($request, $user_id);
 
                         if(!empty($selected_store)) {
 
