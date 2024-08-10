@@ -91,21 +91,14 @@ class User extends Controller
 
                         $user['id'] = $user_id;
 
-                        return $user_detail;
+                        $role= $user_detail->role_id;
+                        return$role;
                         $user_stores = $this->get_available_stores($request, $user_id);
 
                         $user['stores'] = $user_stores;
 
+                            $user['logged_user_store'] = $user_detail['store_id']??null;
 
-
-                        $selected_store = $this->check_store($request, $user_id);
-
-                        if(!empty($selected_store)) {
-                            $selected_store_data= $selected_store['store_data']->toArray();
-                            $user['logged_user_store'] = $selected_store_data['id']??null;
-                        }else{
-                            $user['logged_user_store']=null;
-                        }
 
                     }catch (Exception $e) {}
 
