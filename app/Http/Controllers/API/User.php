@@ -89,21 +89,29 @@ class User extends Controller
                         $decoded_data = $token_decode->sub;
                         $user_id = $decoded_data->user_id;
 
-//                        $selected_store = $this->check_store($request, $user_id);
-
-                        $user['logged_in_user'] = $request->logged_user_id;
-                        $user['restaurant_mode'] = $request->logged_user_store_restaurant_mode;
+                        $user['id'] = $user_id;
 
                         $user_stores = $this->get_available_stores($request, $user_id);
 
-//
-//                        if(!empty($selected_store)) {
+                        $user['stores'] = $user_stores;
+
+
+
+                        $selected_store = $this->check_store($request, $user_id);
+
+                        if(!empty($selected_store)) {
+
+                            $user['restaurant_mode'] = $selected_store->logged_user_store_restaurant_mode;
+
+                            $user['logged_user_store'] = $selected_store??null;
+
+
 //                            $selected_store_data= $selected_store['store_data']->toArray();
 //
 //                            $selected_store_data['store_id']=$selected_store['store_id'];
 //
 //                            $user['logged_user_store'] = $selected_store_data??null;
-//                        }
+                        }
 
                     }catch (Exception $e) {}
 
