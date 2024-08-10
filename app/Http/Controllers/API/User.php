@@ -97,7 +97,7 @@ class User extends Controller
 
 
 
-                     return   $selected_store = $this->check_store($request, $user_id);
+                        $selected_store = $this->check_store($request, $user_id);
 
                         if(!empty($selected_store)) {
                             $selected_store_data= $selected_store['store_data']->toArray();
