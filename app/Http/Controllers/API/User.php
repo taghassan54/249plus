@@ -85,9 +85,9 @@ class User extends Controller
                     $user['access_token'] = $access_token;
 
                     try {
-//                        $token_decode = (new Controller())->jwt_decode($access_token, env('JWT_KEY', config('aconfig.jwt_key')), ['HS256']);
-//                        $decoded_data = $token_decode->sub;
-//                        $user_id = $decoded_data->user_id;
+                        $token_decode = (new Controller())->jwt_decode($access_token, env('JWT_KEY', config('aconfig.jwt_key')), ['HS256']);
+                        $decoded_data = $token_decode->sub;
+                        $user_id = $decoded_data->user_id;
 
 //                        $selected_store = $this->check_store($request, $user_id);
 
